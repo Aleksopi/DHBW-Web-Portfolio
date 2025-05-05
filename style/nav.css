@@ -75,7 +75,7 @@
   .mobile-menu {
     flex-direction: column;
     padding: 1rem;
-    background-color: #ffffff;
+    background-color: #000000;
     transition: max-height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
     margin-top: 1rem;

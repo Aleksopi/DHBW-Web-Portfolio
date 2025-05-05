@@ -3,7 +3,7 @@
       <div class="navbar-content">
         <!-- Logo -->
         <div class="navbar-logo">
-          <a href="./index.php"><img src="./assets/img/logo/b3fbbd61-03f7-47d4-99c6-b3b85cf274cd.png" alt="Logo" width="150" height="150" /></a>
+          <a href="./index.php"><img src="./assets/img/picture/66209283-c854-480c-b2dc-cfacf2733bd8.png" alt="Logo" width="150" height="150" /></a>
         </div>
 
         <!-- Desktop Links -->
