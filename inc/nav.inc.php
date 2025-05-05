@@ -4,7 +4,7 @@
         
         <!-- Logo -->
         <div class="flex-shrink-0 text-xl font-bold text-blue-600">
-          <img src="./assets/b3fbbd61-03f7-47d4-99c6-b3b85cf274cd.png" alt="Logo" width="150" height="150" />
+          <img src="./assets/img/logo/b3fbbd61-03f7-47d4-99c6-b3b85cf274cd.png" alt="Logo" width="150" height="150" />
         </div>
 
         <!-- Desktop Links -->
