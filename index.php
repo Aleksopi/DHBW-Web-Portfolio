@@ -9,5 +9,13 @@
 </head>
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
+  <section class="hero">
+    <div class="hero-image">
+      <img src="./assets/hero.jpg" alt="Hero Image" />
+      <div class="hero-content">
+        <h1>Willkommen auf unserer Webseite!</h1>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
