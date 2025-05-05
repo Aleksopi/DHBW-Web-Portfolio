@@ -8,7 +8,7 @@
     font-family: Arial, sans-serif;
   }
   
-  a {
+  nav a {
     text-decoration: none;
     color: #000000;
     transition: color 0.1s ease;
@@ -16,8 +16,8 @@
     font-weight: bold;
   }
   
-  a:hover {
-    color: #2563eb;
+  nav a:hover {
+    color: #1c6357;
   }
   
   /* Navbar-Grundstruktur */
@@ -26,7 +26,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .container {
+  .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -40,7 +40,7 @@
   }
   
   /* Logo */
-  .logo img {
+  .navbar-logo img {
     width: 100%;
     height: auto;
     max-height: 11rem;
