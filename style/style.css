@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
     overflow: hidden;
   }
   
@@ -21,7 +21,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.7); /* dunkelt das Bild etwas ab für bessere Lesbarkeit */
+    filter: brightness(0.9); 
   }
   
   .hero-content {
@@ -33,5 +33,12 @@
     color: white;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
+    margin-right: 5rem;
   }
   
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 180vh;
+  }

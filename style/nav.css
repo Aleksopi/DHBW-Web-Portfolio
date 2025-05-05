@@ -10,7 +10,7 @@
   
   nav a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     transition: color 0.1s ease;
     font-size: 1.2rem;
     font-weight: bold;
@@ -22,7 +22,7 @@
   
   /* Navbar-Grundstruktur */
   .navbar {
-    background-color: #ffffff;
+    background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;

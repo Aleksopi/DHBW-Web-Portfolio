@@ -18,13 +18,7 @@
     </div>
   </section>
   <section class="content">
-    <h2>Über uns</h2>
-    <p>Hier ist ein bisschen Text über uns.</p>
-    <p>Wir freuen uns, dass Sie hier sind!</p>
-    <p>Hier ist ein bisschen Text über uns.</p>
-    <p>Wir freuen uns, dass Sie hier sind!</p>
-    <p>Hier ist ein bisschen Text über uns.</p>
-    <p>Wir freuen uns, dass Sie hier sind!</p>
+    
 
 </body>
 </html>
