@@ -15,7 +15,7 @@
 
   <section class="home">
     <div class="home-image-wrapper">
-      <video class="home-image" autoplay muted loop playsinline>
+      <video id="heroVideo" class="home-image" autoplay muted loop playsinline>
         <source src="./assets/video/videoplayback.webm" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
@@ -46,6 +46,11 @@
       </div>
     </div>
   </section>
+
+  <section>
+    
+  </section>
+
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -99,6 +104,20 @@
     document.getElementById("next-slide").addEventListener("click", () => {
       currentSlide = (currentSlide + 1) % slides.length;
       updateSlide(currentSlide);
+    });
+
+    const video = document.getElementById('heroVideo');
+
+    video.addEventListener('loadedmetadata', () => {
+      // Starte bei Sekunde 5
+      video.currentTime = 0;
+    });
+
+    video.addEventListener('timeupdate', () => {
+      // Stoppe bei Sekunde 15 (wenn kein loop)
+      if (video.currentTime > 5) {
+        video.currentTime = 0; // Zurückspulen oder video.pause();
+      }
     });
   </script>
 
