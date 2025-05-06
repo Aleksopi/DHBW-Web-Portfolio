@@ -8,7 +8,7 @@
 
         <!-- Desktop Links -->
         <div class="nav-links">
-          <a href="#">Home</a>
+          <a href="./index.php">Home</a>
           <a href="#">Cars</a>
           <a href="#">About</a>
           <a href="#">Kontakt</a>

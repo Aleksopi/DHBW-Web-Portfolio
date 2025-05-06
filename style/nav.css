@@ -45,10 +45,8 @@
   
   /* Logo */
   .navbar-logo img {
-    width: 100%;
+    width: clamp(10rem, 5vw, 15rem);
     height: auto;
-    max-height: 11rem;
-    max-width: 11rem;
     margin-top: 2rem;
   }
   
