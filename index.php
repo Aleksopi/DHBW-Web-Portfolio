@@ -42,7 +42,7 @@
         <a href="#" class="read-more">Anschauen<span>&#10140;</span></a>
       </div>
       <div class="highlight-image slide-right">
-        <img id="highlight-image" src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Highlight Image" loading="lazy" />
+        <img id="highlight-image" src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="Highlight Image" loading="lazy" />
         <div class="slider-controls">
           <button id="prev-slide">&#8592;</button>
           <button id="next-slide">&#8594;</button>
@@ -51,8 +51,17 @@
     </div>
   </section>
 
-  <section>
-
+  <section class="highlight video">
+      <div class="video-container">
+      <video class="portrait-video" autoplay muted loop playsinline>
+        <source src="./assets/video/videoplayback.webm" type="video/webm">
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
+      <video class="portrait-video" autoplay muted loop playsinline>
+        <source src="./assets/video/videoplayback.webm" type="video/webm">
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
+    </div>
   </section>
 
   <script>
@@ -70,6 +79,11 @@
     });
 
     const slides = [
+      {
+        title: "Ferrari F40:<br>Eine Motorsport-Ikone.",
+        description: "Der Ferrari F40 ist bekannt für seine rohe Leistung und ikonische Form.",
+        image: "./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg"
+      },
       {
         title: "Ferrari F40:<br>Eine Motorsport-Ikone.",
         description: "Der Ferrari F40 ist bekannt für seine rohe Leistung und ikonische Form.",
