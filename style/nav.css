@@ -27,7 +27,7 @@ html, body {
   
   /* Navbar-Grundstruktur */
   .navbar {
-    background-color: #000000;
+    background-color: #181818;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -45,7 +45,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
   }
   
   /* Logo */
@@ -80,7 +80,7 @@ html, body {
   .mobile-menu {
     flex-direction: column;
     padding: 1rem;
-    background-color: #000000;
+    background-color: #181818;
     transition: max-height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
     margin-top: 1rem;
@@ -98,6 +98,11 @@ html, body {
   
   /* Responsive */
   @media (max-width: 768px) {
+
+    nav a {
+      padding: 1rem;
+    }
+
     .nav-links {
       display: none;
     }

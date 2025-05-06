@@ -1,13 +1,20 @@
-/* Startseite (home) */
+@font-face {
+  font-family: 'Ferro Rosso';
+  src: url('./FerroRosso.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end; /* Text wandert nach unten */
+  justify-content: center;
   height: 95vh;
   overflow: hidden;
   padding: 2rem;
 }
+
 
 .home-image-wrapper {
   position: absolute;
@@ -27,21 +34,21 @@
 }
 
 .home-content {
-  position: relative;
+  font-family: 'Ferro Rosso', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 4rem;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 2rem 3rem;
-  border-radius: 1rem;
-  max-width: 600px;
-  margin-right: 3rem;
-  color: white;
-  text-align: right;
 }
+
 
 .home h1 {
   font-size: clamp(1rem, 5vw, 2rem);
   margin-bottom: 1rem;
   font-weight: 600;
+
 }
 
 .home h2 {
@@ -56,10 +63,11 @@
   }
 
   .home-content {
-    margin-right: 0;
+    margin: 0 auto;
     text-align: center;
   }
 }
+
 
 /* Content Bereich */
 /* Highlight Sektion */

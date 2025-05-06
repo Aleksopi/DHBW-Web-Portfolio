@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-  <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="./style/nav.css" />
   <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style/style.css" />
 </head>
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
 
   <section class="home">
     <div class="home-image-wrapper">
-      <img src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="Home Image" class="home-image" loading="lazy" />
+      <video class="home-image" autoplay muted loop playsinline>
+        <source src="./assets/video/videoplayback.webm" type="video/webm">
+        Dein Browser unterstützt dieses Videoformat nicht.
+      </video>
     </div>
     <div class="home-content">
       <div class="home-text">
@@ -30,7 +33,7 @@
         <p id="highlight-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque impedit...
         </p>
-        <a href="#" class="read-more">Mehr lesen <span>&#10140;</span></a>
+        <a href="#" class="read-more">Anschauen<span>&#10140;</span></a>
       </div>
       <div class="highlight-image slide-right">
         <img id="highlight-image" src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Highlight Image" loading="lazy" />
@@ -62,12 +65,12 @@
         image: "./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg"
       },
       {
-        title: "Noch ein Ferrari F40:<br>Eine Motorsport-Ikone.",
+        title: "Ferrari F40:<br>Noch einen",
         description: "Auch ein Auto",
         image: "./assets/img/picture/6EC25E8D-CD8C-4B5C-8A46-72E7BDA1825B_1_105_c.jpeg"
       },
       {
-        title: "Und noch ein Ferrari F40:<br>Eine Motorsport-Ikone.",
+        title: "Und noch ein Ferrari F40:<br>Und noch ein",
         description: "Auto macht brum brum",
         image: "./assets/img/picture/F349224B-F562-489B-B149-988FF6143689_1_105_c.jpeg"
       }
