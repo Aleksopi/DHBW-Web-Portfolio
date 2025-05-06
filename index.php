@@ -52,17 +52,30 @@
   </section>
 
   <section class="highlight video">
-      <div class="video-container">
-      <video class="portrait-video" autoplay muted loop playsinline>
-        <source src="./assets/video/videoplayback (1).webm" type="video/webm">
-        Dein Browser unterstützt dieses Videoformat nicht.
-      </video>
-      <video class="portrait-video" autoplay muted loop playsinline>
-        <source src="./assets/video/videoplayback (1).webm" type="video/webm">
-        Dein Browser unterstützt dieses Videoformat nicht.
-      </video>
+    <div class="video-grid">
+      <div class="video-block">
+        <video class="portrait-video" autoplay muted loop playsinline>
+          <source src="./assets/video/videoplayback (1).webm" type="video/webm">
+          Dein Browser unterstützt dieses Videoformat nicht.
+        </video>
+      </div>
+      <div class="text-block">
+        <h2>Ferrari Vibes</h2>
+        <p>Pure Leidenschaft auf der Rennstrecke – aufgenommen in Tokio.</p>
+      </div>
+      <div class="text-block">
+        <h2>Emotion & Technik</h2>
+        <p>Wenn Kraft auf Eleganz trifft – der Sound, das Design, das Gefühl.</p>
+      </div>
+      <div class="video-block">
+        <video class="portrait-video" autoplay muted loop playsinline>
+          <source src="./assets/video/videoplayback (2).webm" type="video/webm">
+          Dein Browser unterstützt dieses Videoformat nicht.
+        </video>
+      </div>
     </div>
   </section>
+
 
   <script>
     const observer = new IntersectionObserver((entries) => {
