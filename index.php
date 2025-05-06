@@ -150,10 +150,17 @@
         video.currentTime = 0; // Zurückspulen oder video.pause();
       }
     });
+
+      window.addEventListener('scroll', () => {
+      const grid = document.querySelector('.video-grid');
+      const rect = grid.getBoundingClientRect();
+      const trigger = window.innerHeight * 0.85;
+
+      if (rect.top < trigger) {
+        grid.classList.add('animate-in');
+      }
+    });
   </script>
-
-
-
 
   <footer></footer>
 </body>
