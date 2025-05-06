@@ -54,11 +54,11 @@
   <section class="highlight video">
       <div class="video-container">
       <video class="portrait-video" autoplay muted loop playsinline>
-        <source src="./assets/video/videoplayback.webm" type="video/webm">
+        <source src="./assets/video/videoplayback (1).webm" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
       <video class="portrait-video" autoplay muted loop playsinline>
-        <source src="./assets/video/videoplayback.webm" type="video/webm">
+        <source src="./assets/video/videoplayback (1).webm" type="video/webm">
         Dein Browser unterstützt dieses Videoformat nicht.
       </video>
     </div>

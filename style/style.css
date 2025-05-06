@@ -270,16 +270,18 @@
 .video-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem; /* Abstand zwischen den Videos */
+  padding: 0 2rem; /* Abstand links und rechts */
   flex-wrap: wrap;
 }
 
 .portrait-video {
-  width: auto;
-  height: 70vh;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 85vh; /* größer */
+  max-height: 90vh;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
+
 
 /* Footer */
 footer {
