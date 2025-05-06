@@ -133,6 +133,29 @@
   border-radius: 0.5rem;
 }
 
+/* Slider Controls */
+.slider-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slider-controls button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.slider-controls button:hover {
+  background-color: black;
+  color: white;
+}
+
 /* Animation */
 .slide-left, .slide-right {
   opacity: 0;
@@ -178,9 +201,6 @@
     padding: 2rem 1rem;
   }
 }
-
-
-
 
 /* Footer */
 footer {
