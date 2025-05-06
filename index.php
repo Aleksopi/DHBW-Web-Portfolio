@@ -24,31 +24,37 @@
   </section>
 
   <section class="highlight animate-on-scroll">
-    <div class="highlight-container">
-      <div class="highlight-text slide-left">
-        <h2>Ferrari F40:<br>Lorem ipsum dolor sit amet...</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        <a href="#" class="read-more">Mehr lesen <span>&#10140;</span></a>
-      </div>
-      <div class="highlight-image slide-right">
-        <img src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Ferrari F50" loading="lazy" />
-      </div>
+  <div class="highlight-container reverse-layout">
+    <div class="highlight-text slide-left">
+      <h2>
+        Ferrari F40:<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque impedit...
+      </p>
+      <a href="#" class="read-more">Mehr lesen <span>&#10140;</span></a>
     </div>
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target); // Nur einmal animieren
-          }
-        });
-      }, { threshold: 0.3 });
-
-      document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
+    <div class="highlight-image slide-right">
+      <img src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Ferrari F50" loading="lazy" />
+    </div>
+  </div>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
       });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
   </script>
-</section>
+
+  </section>
 
 
 

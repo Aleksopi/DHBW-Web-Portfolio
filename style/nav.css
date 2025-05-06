@@ -1,3 +1,8 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -45,10 +50,12 @@
   
   /* Logo */
   .navbar-logo img {
-    width: clamp(10rem, 5vw, 15rem);
+    width: 100%;
+    max-width: 10rem;
     height: auto;
     margin-top: 2rem;
   }
+  
   
   /* Navigation Links – Desktop */
   .nav-links {
