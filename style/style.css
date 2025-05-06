@@ -1,0 +1,212 @@
+/* Startseite (home) */
+.home {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 95vh;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.home-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.725);
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin-right: 3rem;
+  color: white;
+  text-align: right;
+}
+
+.home h1 {
+  font-size: clamp(1rem, 5vw, 2rem);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.home h2 {
+  font-size: clamp(0.7rem, 4vw, 1.5rem);
+  font-weight: 400;
+}
+
+@media (max-width: 815px) {
+  .home {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-content {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+/* Content Bereich */
+/* Highlight Sektion */
+.highlight {
+  background-color: #fff;
+  padding: 4rem 2rem;
+}
+
+.highlight-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.reverse-layout {
+  flex-direction: row;
+}
+
+.highlight-text {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.highlight-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.highlight-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.read-more span {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.read-more:hover {
+  background-color: black;
+  color: white;
+}
+
+.highlight-image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.highlight-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0.5rem;
+}
+
+/* Slider Controls */
+.slider-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slider-controls button {
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.slider-controls button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Animation */
+.slide-left, .slide-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease;
+}
+
+.slide-left {
+  transform: translateX(-100px);
+}
+
+.animate-in .slide-left,
+.animate-in .slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .reverse-layout {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .highlight-text {
+    margin-bottom: 1rem;
+  }
+
+  .highlight-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .highlight-image img {
+    max-width: 80%;
+    margin-top: 1rem;
+  }
+
+  .highlight-container {
+    gap: 1.5rem;
+  }
+
+  .highlight {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Footer */
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 70vh;
+  background-color: black;
+}

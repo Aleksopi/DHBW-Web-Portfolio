@@ -1,24 +1,23 @@
-  <nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        
+<nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-content">
         <!-- Logo -->
-        <div class="flex-shrink-0 text-xl font-bold text-blue-600">
-          <img src="./assets/b3fbbd61-03f7-47d4-99c6-b3b85cf274cd.png" alt="Logo" width="150" height="150" />
+        <div class="navbar-logo">
+          <a href="./index.php"><img src="./assets/img/picture/66209283-c854-480c-b2dc-cfacf2733bd8.png" alt="Logo" width="150" height="150" /></a>
         </div>
 
         <!-- Desktop Links -->
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Cars</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Kontakt</a>
+        <div class="nav-links">
+          <a href="./index.php">Home</a>
+          <a href="#">Cars</a>
+          <a href="#">About</a>
+          <a href="#">Kontakt</a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button id="menu-btn" class="text-gray-700 focus:outline-none">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="mobile-menu-btn">
+          <button id="menu-btn">
+            <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -28,11 +27,11 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Über uns</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Kontakt</a>
+    <div id="mobile-menu" class="mobile-menu collapsed">
+      <a href="#">Home</a>
+      <a href="#">Cars</a>
+      <a href="#">About</a>
+      <a href="#">Kontakt</a>
     </div>
   </nav>
 
@@ -41,6 +40,19 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('collapsed')) {
+        mobileMenu.classList.remove('collapsed');
+        mobileMenu.classList.add('expanded');
+      } else {
+        mobileMenu.classList.add('collapsed');
+        mobileMenu.classList.remove('expanded');
+      }
     });
+
+    window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      mobileMenu.classList.add('collapsed');
+      mobileMenu.classList.remove('expanded');
+    }
+  });
   </script>
