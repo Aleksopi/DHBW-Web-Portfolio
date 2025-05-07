@@ -27,7 +27,7 @@ html, body {
   
   /* Navbar-Grundstruktur */
   .navbar {
-    background-color: #000000;
+    background-color: #181818;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -45,7 +45,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
   }
   
   /* Logo */
@@ -53,7 +53,7 @@ html, body {
     width: 100%;
     max-width: 10rem;
     height: auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   
   
@@ -80,7 +80,7 @@ html, body {
   .mobile-menu {
     flex-direction: column;
     padding: 1rem;
-    background-color: #000000;
+    background-color: #181818;
     transition: max-height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
     margin-top: 1rem;
@@ -98,6 +98,11 @@ html, body {
   
   /* Responsive */
   @media (max-width: 768px) {
+
+    nav a {
+      padding: 1rem;
+    }
+
     .nav-links {
       display: none;
     }
@@ -110,4 +115,75 @@ html, body {
       display: flex;
     }
   }
-  
+
+/* Footer */
+footer {
+  background-color: #0e0e0e;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.footer-logo img {
+  height: auto;
+  width: 7rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff0000; /* z.B. Ferrari-Rot */
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}

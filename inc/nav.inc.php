@@ -9,9 +9,9 @@
         <!-- Desktop Links -->
         <div class="nav-links">
           <a href="./index.php">Home</a>
-          <a href="#">Cars</a>
-          <a href="#">About</a>
-          <a href="#">Kontakt</a>
+          <a href="./gallary.php">Cars</a>
+          <a href="./about.php">About</a>
+          <a href="./kontakt.php">Kontakt</a>
         </div>
 
         <!-- Mobile Menu Button -->
