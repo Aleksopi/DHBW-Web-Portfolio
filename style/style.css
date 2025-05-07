@@ -364,15 +364,251 @@
     max-width: 100%;
   }
 }
+/** logo ***/
 
+.brand-strip {
+  background-color: #fff;
+  padding: 2rem;
+}
 
-
-
-/* Footer */
-footer {
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  height: 70vh;
-  background-color: black;
+}
+
+.brand-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.brand-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.brand-item:hover img {
+  transform: scale(1.05);
+}
+
+.brand-label {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/** Gallary Section */
+.gallery-section {
+  background-color: #0e0e0e;
+  padding: 5rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery-header h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gallery-header p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 3rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-header h2 {
+    font-size: 2rem;
+  }
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  text-align: left;
+}
+
+.overlay h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.overlay-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.overlay-btn:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
+/* Ka */
+.italia {
+  height: 7vh;
+  background: linear-gradient(180deg, #008000 0%, #008000 33.333%, #ffffff 33.333%, #ffffff 66.666%, #ff0000 66.666%, #ff0000 100%);
+}
+
+/* Footer */
+/* Neuer Footer */
+footer {
+  background-color: #0e0e0e;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.footer-logo img {
+  height: auto;
+  width: 7rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff0000; /* z.B. Ferrari-Rot */
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
 }
