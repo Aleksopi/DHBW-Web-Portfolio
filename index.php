@@ -80,20 +80,20 @@
   <section class="brand-strip">
     <div class="brand-grid">
       <div class="brand-item">
-        <img src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Ferrari" />
+        <img src="assets/img/picture/ferrari-daytona-sp3-la-prova-a-spa.jpg" alt="Ferrari" />
         <div class="brand-label">Ferrari</div>
       </div>
       <div class="brand-item">
-        <img src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="Lamborghini" />
+        <img src="assets/img/picture/6714563edecb52a5f00eb0257fc97028.jpeg" alt="Lamborghini" />
         <div class="brand-label">Lamborghini</div>
       </div>
       <div class="brand-item">
-        <img src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="Porsche" />
+        <img src="assets/img/picture/porsche-gt25-2.jpg" alt="Porsche" />
         <div class="brand-label">Porsche</div>
       </div>
       <div class="brand-item">
-        <img src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="McLaren" />
-        <div class="brand-label">McLaren</div>
+        <img src="assets/img/picture/1200-L-dj-collector-cette-rare-bugatti-chiron-sport-110-ans-est-vendre.jpg" alt="Buggati" />
+        <div class="brand-label">Buggati</div>
       </div>
     </div>
   </section>

@@ -366,14 +366,15 @@
 }
 /** logo ***/
 
+/* Brand Strip mit modernem Look */
 .brand-strip {
-  background-color: #fff;
-  padding: 2rem;
+  background: linear-gradient(180deg, #fff 0%, #f5f5f5 100%);
+  padding: 3rem 2rem;
 }
 
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -382,36 +383,56 @@
 .brand-item {
   position: relative;
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .brand-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.brand-item:hover {
+  transform: translateY(-8px) rotateZ(-1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .brand-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .brand-label {
   position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  background: rgba(0, 0, 0, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   color: #fff;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.9rem;
-  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
   font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
 }
 
+.brand-item:hover .brand-label {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Responsiveness */
 @media (max-width: 900px) {
   .brand-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -423,6 +444,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
