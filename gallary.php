@@ -17,5 +17,6 @@
   
 
   <?php include_once('./inc/footer.inc.php'); ?>
+  <script src="./script/gallary.js"></script> <!-- Your JavaScript file for the gallery here -->
 </body>
 </html>
