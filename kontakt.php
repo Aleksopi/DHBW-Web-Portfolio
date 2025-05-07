@@ -17,5 +17,6 @@
   
 
   <?php include_once('./inc/footer.inc.php'); ?>
+  <script src="./script/kontakt.js"></script> <!-- Your JavaScript file for the home here -->
 </body>
 </html>

@@ -17,5 +17,6 @@
   
 
   <?php include_once('./inc/footer.inc.php'); ?>
+  <script src="./script/about.js"></script> <!-- Your JavaScript file for the about here -->
 </body>
 </html>
