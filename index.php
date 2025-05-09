@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
-
+  
   <section class="home">
     <div class="home-image-wrapper">
       <video id="heroVideo" class="home-image" autoplay muted loop playsinline>
