@@ -1,4 +1,8 @@
 /* Gallery Anpassungen */
+.gallery-section {
+    margin-top: 8rem;
+  }  
+
 .gallery-item {
     position: relative;
     overflow: hidden;
@@ -61,7 +65,14 @@
     color: black;
   }
   
-  /* Responsive Anpassungen */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   @media (max-width: 900px) {
     .gallery-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -73,4 +84,5 @@
       grid-template-columns: 1fr;
     }
   }
+  
   
