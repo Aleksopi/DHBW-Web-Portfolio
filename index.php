@@ -29,7 +29,7 @@
       </div>
       <div class="highlight-buttons">
         <a href="#" class="highlight-btn">FERRARI F40</a>
-        <a href="#" class="highlight-btn">CARS</a>
+        <a href="./gallary.php" class="highlight-btn">CARS</a>
       </div>
     </div>
   </section>

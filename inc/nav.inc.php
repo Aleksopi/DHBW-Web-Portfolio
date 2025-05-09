@@ -3,7 +3,7 @@
       <div class="navbar-content">
         <!-- Logo -->
         <div class="navbar-logo">
-          <a href="./index.php"><img src="./assets/img/picture/66209283-c854-480c-b2dc-cfacf2733bd8.png" alt="Logo" width="150" height="150" /></a>
+          <a href="./index.php"><img src="./assets/img/picture/66209283-c854-480c-b2dc-cfacf2733bd8.png" alt="Logo"  /></a>
         </div>
 
         <!-- Desktop Links -->
@@ -28,10 +28,10 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu collapsed">
-      <a href="#">Home</a>
-      <a href="#">Cars</a>
-      <a href="#">About</a>
-      <a href="#">Kontakt</a>
+        <a href="./index.php">Home</a>
+        <a href="./gallary.php">Cars</a>
+        <a href="./about.php">About</a>
+        <a href="./kontakt.php">Kontakt</a>
     </div>
     <script src="./script/nav.js"></script>
   </nav>
