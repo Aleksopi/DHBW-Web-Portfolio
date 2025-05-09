@@ -15,11 +15,6 @@
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
   <section class="gallery-section">
-    <div class="gallery-header">
-      <h2>Unsere Autos</h2>
-      <p>Entdecke unsere Modelle</p>
-    </div>
-
     <div class="gallery-grid">
       <?php
         $carsDir = __DIR__ . '/assets/cars';
