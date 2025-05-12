@@ -1,0 +1,261 @@
+:root {
+  --dark-bg: #0e0e0e;
+  --dark-container: #111;
+  --border-radius: 0.75rem;
+  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --primary-font: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  font-family: var(--primary-font);
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 8rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+.container h1 {
+  font-family: var(--primary-font);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: var(--text-shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--dark-container);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--primary-font);
+  background-color: var(--dark-container);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  max-height: 500px;	
+  resize: vertical;
+}
+
+.form-group button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* Kontakt Informationen */
+.contact-info {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--dark-container);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info h2 {
+  font-family: var(--primary-font);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: var(--text-shadow);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.contact-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 1rem;
+  padding: 0.5rem	;
+}
+
+.contact-item a {
+  color: rgba(255, 255, 255, 0.85);
+  display: inline;
+  text-decoration: none;
+  
+  /* Horizontaler Gradient (von links nach rechts) */
+  background-image: linear-gradient(to right, 
+    rgba(0, 128, 0, 0.5) 0%,
+    rgba(0, 128, 0, 0.5) 33.333%, 
+    rgba(255, 255, 255, 0.5) 33.333%,
+    rgba(255, 255, 255, 0.5) 66.666%, 
+    rgba(255, 0, 0, 0.5) 66.666%,
+    rgba(255, 0, 0, 0.5) 100%
+  );
+  
+  background-repeat: no-repeat;
+
+  /* Position am unteren Rand des Elements */
+  background-position: 0 100%;
+
+  /* Breite 100%, Höhe 1px */
+  background-size: 100% 1px;
+}
+
+.contact-item a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  background-image: linear-gradient(to right, 
+    rgba(0, 128, 0, 0.9) 0%,
+    rgba(0, 128, 0, 0.9) 33.333%, 
+    rgba(255, 255, 255, 0.9) 33.333%,
+    rgba(255, 255, 255, 0.9) 66.666%, 
+    rgba(255, 0, 0, 0.9) 66.666%,
+    rgba(255, 0, 0, 0.9) 100%
+  );
+}
+
+.contact-info strong {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  min-width: 12rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.italia {
+  height: 7vh;
+  background: linear-gradient(180deg, #008000 0%, #008000 33.333%, #ffffff 33.333%, #ffffff 66.666%, #ff0000 66.666%, #ff0000 100%);
+}
+
+/* Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+  .container {
+    margin: 8rem auto;
+  }
+  
+  .contact-form,
+  .contact-info {
+    padding: 1.5rem;
+  }
+  
+  .container h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .contact-info {
+    padding: 1.25rem;
+  }
+  
+  .contact-info p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .contact-info strong {
+    min-width: auto;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Zusätzliche Effekte für interaktive Elemente */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group button:active {
+  transform: scale(0.98);
+}
