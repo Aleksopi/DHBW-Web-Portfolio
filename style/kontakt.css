@@ -220,7 +220,12 @@ body {
   
   .contact-form,
   .contact-info {
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .contact-item {
+    font-size: 0.8rem;
+    padding: 0.1rem;
   }
   
   .container h1 {

@@ -46,23 +46,21 @@
 
     <div class="contact-info">
       <h2>Kontaktinformationen</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <strong>Adresse:</strong>
-          <p>Musterstraße 123, 12345 Musterstadt</p>
-        </div>
-        <div class="contact-item">
-          <strong>Telefon:</strong>
-          <a href="tel:+49123456789">+49 123 456789</a>
-        </div>
-        <div class="contact-item">
-          <strong>E-Mail:</strong>
-          <a href="mailto:info@beispiel.de">info@beispiel.de</a>
-        </div>
-        <div class="contact-item">
-          <strong>Öffnungszeiten:</strong>
-          <p>Mo-Fr 9:00 - 17:00 Uhr</p>
-        </div>
+      <div class="contact-item">
+        <strong>Adresse:</strong>
+        <p>Musterstraße 123, 12345 Musterstadt</p>
+      </div>
+      <div class="contact-item">
+        <strong>Telefon:</strong>
+        <a href="tel:+49123456789">+49 123 456789</a>
+      </div>
+      <div class="contact-item">
+        <strong>E-Mail:</strong>
+        <a href="mailto:info@beispiel.de">info@beispiel.de</a>
+      </div>
+      <div class="contact-item">
+        <strong>Öffnungszeiten:</strong>
+        <p>Mo-Fr 9:00 - 17:00 Uhr</p>
       </div>
     </div>
   </div>
