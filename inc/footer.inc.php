@@ -9,6 +9,8 @@
         <a href="#">Projekte</a>
         <a href="#">Über mich</a>
         <a href="#">Kontakt</a>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
       </div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
