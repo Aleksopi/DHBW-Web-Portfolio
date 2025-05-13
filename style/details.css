@@ -1,0 +1,45 @@
+.vehicle-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.vehicle-hero {
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.vehicle-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: .03em;
+}
+
+.vehicle-meta {
+  font-size: 1rem;
+  opacity: .8;
+}
+
+.details-list {
+  max-width: 60ch;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: .75rem 1rem;
+}
+
+.details-list li {
+  list-style: none;
+}
+
+.details-list strong {
+  font-weight: 600;
+}
