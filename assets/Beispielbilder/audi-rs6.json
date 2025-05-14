@@ -1,0 +1,25 @@
+{
+  "name": "Audi RS-6 Avant GT",
+  "brand": "Audi",
+  "model": "RS-6 Avant GT",
+  "year": "2024",
+  "color": "Nardograu",
+  "interior": "Schwarzes Leder",
+  "specification": "Avant GT Edition",
+  "transmission": "8-Gang Tiptronic",
+  "drive": "Allrad (Quattro)",
+  "engine": "4.0 L V8 Bi-Turbo",
+  "horsepower": "600 PS",
+  "torque": "800 Nm",
+  "acceleration": "0-100 km/h in 3,6 Sekunden",
+  "top_speed": "315 km/h",
+  "description": "Der Audi RS-6 Avant GT kombiniert Höchstleistung mit Alltags­tauglichkeit. Sein 4,0 Liter V8 Biturbo-Motor liefert 600 PS und 800 Nm Drehmoment. Mit dem adaptiven Luftfahrwerk, dem serienmäßigen Allradantrieb Quattro und der Tiptronic-Achtgang-Automatik bietet er sowohl dynamisches Fahren als auch hohen Komfort. Limitiert auf 500 Exemplare, präsentiert sich der Avant GT in exklusivem Nardograu und schwarzem Led­er­interieur.",
+  "images": [
+    "assets/Beispielbilder/side_1.jpg",
+    "assets/Beispielbilder/front.jpg",
+    "assets/Beispielbilder/back.jpg",
+    "assets/Beispielbilder/side.jpg",
+    "assets/Beispielbilder/interior_front.jpg",
+    "assets/Beispielbilder/interior__back.jpg"
+  ]
+}
