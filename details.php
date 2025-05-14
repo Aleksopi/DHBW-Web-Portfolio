@@ -3,53 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Fahrzeugdetails</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="./style/nav_footer.css" />
+  <link rel="stylesheet" href="./style/details.css" />
   <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
-
-  <link rel="stylesheet" href="./style/details.css" /> <!-- Your CSS file for the about here -->
-  
 </head>
 <body>
-  <?php include_once('./inc/nav.inc.php'); ?>
-  
-  <script src="./script/about.js"></script> <!-- Your JavaScript file for the about here -->
+
+<?php include_once('./inc/nav.inc.php'); ?>
 
 <?php
-
-$id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/','',$_GET['id']) : null;
+$id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['id']) : null;
 if (!$id) {
     header('HTTP/1.0 404 Not Found');
     echo '<p>Fehler: Keine Fahrzeug-ID angegeben.</p>';
     exit;
 }
 
-// JSON-Datei laden
-$jsonPath = __DIR__ . "/assets/Beispielbilder/{$id}.json";
+$folderPath = __DIR__ . "/assets/cars/{$id}";
+$jsonPath = "{$folderPath}/data.json";
+
 if (!file_exists($jsonPath)) {
     header('HTTP/1.0 404 Not Found');
-    echo '<p>Fehler: Daten nicht gefunden.</p>';
+    echo '<p>Fehler: Fahrzeugdaten nicht gefunden.</p>';
     exit;
 }
+
 $car = json_decode(file_get_contents($jsonPath), true);
 if (json_last_error() !== JSON_ERROR_NONE) {
-    echo '<p>Fehler beim Parsen der Daten.</p>';
+    echo '<p>Fehler beim Parsen der JSON-Daten.</p>';
     exit;
 }
 ?>
 
 <main>
   <!-- Banner-Galerie -->
-<div class="banner_gallery wrapperfull">
-  <?php foreach (array_slice($car['images'], 0, 3) as $index => $img): ?>
-    <div class="thumb" data-id="<?= $index ?>">
-      <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
-    </div>
-  <?php endforeach; ?>
-</div>
-
+  <div class="banner_gallery wrapperfull">
+    <?php foreach (array_slice($car['images'], 0, 3) as $index => $img): ?>
+      <div class="thumb" data-id="<?= $index ?>">
+        <img src="assets/cars/<?= htmlspecialchars($id) ?>/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
+      </div>
+    <?php endforeach; ?>
+  </div>
 
   <!-- Fahrzeugkopf -->
   <section class="vehicle-hero">
@@ -57,11 +54,10 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     <p class="vehicle-meta"><?= htmlspecialchars($car['brand']) ?> • Baujahr <?= htmlspecialchars($car['year']) ?></p>
   </section>
 
-  <!-- Detail-Karten mit Icons -->
+  <!-- Detail-Karten -->
   <section class="vehicle-details">
     <ul class="details-list">
       <?php
-      // Keys, Labels und Icon-Pfade
       $info = [
         'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
         'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
@@ -73,6 +69,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
         'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
         'engine'       => ['Motor',        'assets/icons/engine.svg'],
       ];
+
       foreach ($info as $key => [$label, $icon]):
         if (!empty($car[$key])): ?>
           <li>
@@ -84,10 +81,9 @@ if (json_last_error() !== JSON_ERROR_NONE) {
               <span><?= htmlspecialchars($car[$key]) ?></span>
             </div>
           </li>
-      <?php   endif;
-      endforeach;
-      // Beschreibung
-      if (!empty($car['description'])): ?>
+      <?php endif; endforeach; ?>
+
+      <?php if (!empty($car['description'])): ?>
         <li>
           <div class="icon">
             <img src="assets/icons/description.svg" alt="Beschreibung">
@@ -103,6 +99,5 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 </main>
 
 <?php include_once('./inc/footer.inc.php'); ?>
-
 </body>
 </html>
