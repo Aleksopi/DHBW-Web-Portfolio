@@ -127,11 +127,24 @@ main {
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
   .banner_gallery.wrapperfull {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     aspect-ratio: auto;
   }
-  .banner_gallery.wrapperfull .thumb:nth-child(1) { grid-row: 1 / 2; }
-  .banner_gallery.wrapperfull .thumb:nth-child(2) { grid-row: 2 / 3; }
-  .banner_gallery.wrapperfull .thumb:nth-child(3) { grid-row: 3 / 4; }
+
+  .banner_gallery.wrapperfull .thumb {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+
+  .banner_gallery.wrapperfull .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
+
+
