@@ -5,10 +5,12 @@
         <span>SCATTI su STRADA</span>
       </div>
       <div class="footer-nav">
-        <a href="#">Startseite</a>
-        <a href="#">Projekte</a>
-        <a href="#">Über mich</a>
-        <a href="#">Kontakt</a>
+        <a href="./index.php">Startseite</a>
+        <a href="./gallary.php">Cars</a>
+        <a href="./about.php">About</a>
+        <a href="./kontakt.php">Kontakt</a>
+        <a href="./impressum.php">Impressum</a>
+        <a href="./datenschutz.php">Datenschutz</a>
       </div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

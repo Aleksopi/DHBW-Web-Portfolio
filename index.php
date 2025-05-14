@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
-
+  
   <section class="home">
     <div class="home-image-wrapper">
       <video id="heroVideo" class="home-image" autoplay muted loop playsinline>
@@ -28,8 +28,8 @@
         <h2>Hier finden Sie meine Projekte und Arbeiten</h2>
       </div>
       <div class="highlight-buttons">
-        <a href="#" class="highlight-btn">FERRARI F40</a>
-        <a href="#" class="highlight-btn">CARS</a>
+        <a href="details.php?id=ferrari-f40" class="highlight-btn">FERRARI F40</a>
+        <a href="./gallary.php" class="highlight-btn">CARS</a>
       </div>
     </div>
   </section>
