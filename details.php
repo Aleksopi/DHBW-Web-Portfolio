@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./style/nav_footer.css" />
   <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="./style/about.css" /> <!-- Your CSS file for the about here -->
+  <link rel="stylesheet" href="./style/details.css" /> <!-- Your CSS file for the about here -->
   
 </head>
 <body>
@@ -19,73 +19,84 @@
 
 <?php
 
-$id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['id']) : null;
+$id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/','',$_GET['id']) : null;
 if (!$id) {
-    header("HTTP/1.0 404 Not Found");
-    echo '<p style="color:red;">Fehler: Keine Fahrzeug-ID angegeben.</p>';
+    header('HTTP/1.0 404 Not Found');
+    echo '<p>Fehler: Keine Fahrzeug-ID angegeben.</p>';
     exit;
 }
 
-// Pfad zur JSON-Datei im Ordner assets/Beispielbilder
+// JSON-Datei laden
 $jsonPath = __DIR__ . "/assets/Beispielbilder/{$id}.json";
 if (!file_exists($jsonPath)) {
-    header("HTTP/1.0 404 Not Found");
-    echo '<p style="color:red;">Fehler: JSON-Datei für ID "' . htmlspecialchars($id) . '" nicht gefunden.</p>';
+    header('HTTP/1.0 404 Not Found');
+    echo '<p>Fehler: Daten nicht gefunden.</p>';
     exit;
 }
-
-// JSON einlesen und dekodieren
-$jsonContent = file_get_contents($jsonPath);
-$car = json_decode($jsonContent, true);
+$car = json_decode(file_get_contents($jsonPath), true);
 if (json_last_error() !== JSON_ERROR_NONE) {
-    echo '<p style="color:red;">Fehler beim Verarbeiten der JSON-Datei: ' . json_last_error_msg() . '</p>';
+    echo '<p>Fehler beim Parsen der Daten.</p>';
     exit;
 }
-
 ?>
 
 <main>
-  <!-- Bildgalerie aus JSON -->
-  <section class="vehicle-gallery">
-    <?php foreach ($car['images'] as $imgPath): ?>
-      <figure class="gallery-slide">
-        <img src="<?= htmlspecialchars($imgPath) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
-      </figure>
-    <?php endforeach; ?>
-  </section>
+  <!-- Banner-Galerie -->
+<div class="banner_gallery wrapperfull">
+  <?php foreach (array_slice($car['images'], 0, 3) as $index => $img): ?>
+    <div class="thumb" data-id="<?= $index ?>">
+      <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
+    </div>
+  <?php endforeach; ?>
+</div>
 
-  <!-- Fahrzeugkopf aus JSON -->
+
+  <!-- Fahrzeugkopf -->
   <section class="vehicle-hero">
-    <h1 class="vehicle-title"><?php echo htmlspecialchars($car['name']); ?></h1>
-    <p class="vehicle-meta"><?php echo htmlspecialchars($car['brand']) . ' • Baujahr ' . htmlspecialchars($car['year']); ?></p>
+    <h1 class="vehicle-title"><?= htmlspecialchars($car['name']) ?></h1>
+    <p class="vehicle-meta"><?= htmlspecialchars($car['brand']) ?> • Baujahr <?= htmlspecialchars($car['year']) ?></p>
   </section>
 
-  <!-- Detail-Liste aus JSON -->
+  <!-- Detail-Karten mit Icons -->
   <section class="vehicle-details">
     <ul class="details-list">
       <?php
-        // Schlüssel, die wir als Details anzeigen wollen
-        $infoKeys = ['horsepower','torque','acceleration','top_speed','color','interior','transmission','drive','engine'];
-        $labels = [
-          'horsepower'   => 'Leistung',
-          'torque'       => 'Drehmoment',
-          'acceleration' => '0-100 km/h',
-          'top_speed'    => 'Höchstgeschwindigkeit',
-          'color'        => 'Farbe',
-          'interior'     => 'Innenraum',
-          'transmission' => 'Getriebe',
-          'drive'        => 'Antrieb',
-          'engine'       => 'Motor'
-        ];
-        foreach ($infoKeys as $key) {
-          if (!empty($car[$key])): ?>
-            <li><strong><?= $labels[$key] ?>:</strong> <?= htmlspecialchars($car[$key]) ?></li>
+      // Keys, Labels und Icon-Pfade
+      $info = [
+        'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
+        'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
+        'acceleration' => ['0-100 km/h',   'assets/icons/acceleration.svg'],
+        'top_speed'    => ['Höchstgeschw.', 'assets/icons/speed.svg'],
+        'color'        => ['Farbe',        'assets/icons/color.svg'],
+        'interior'     => ['Innenraum',    'assets/icons/interior.svg'],
+        'transmission' => ['Getriebe',     'assets/icons/transmission.svg'],
+        'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
+        'engine'       => ['Motor',        'assets/icons/engine.svg'],
+      ];
+      foreach ($info as $key => [$label, $icon]):
+        if (!empty($car[$key])): ?>
+          <li>
+            <div class="icon">
+              <img src="<?= $icon ?>" alt="<?= $label ?>">
+            </div>
+            <div class="content">
+              <strong><?= $label ?></strong>
+              <span><?= htmlspecialchars($car[$key]) ?></span>
+            </div>
+          </li>
       <?php   endif;
-        }
-      ?>
-      <!-- Freitextbeschreibung -->
-      <?php if (!empty($car['description'])): ?>
-        <li style="grid-column:1/ -1"><strong>Beschreibung:</strong> <?= htmlspecialchars($car['description']) ?></li>
+      endforeach;
+      // Beschreibung
+      if (!empty($car['description'])): ?>
+        <li>
+          <div class="icon">
+            <img src="assets/icons/description.svg" alt="Beschreibung">
+          </div>
+          <div class="content">
+            <strong>Beschreibung</strong>
+            <span><?= htmlspecialchars($car['description']) ?></span>
+          </div>
+        </li>
       <?php endif; ?>
     </ul>
   </section>
