@@ -1,0 +1,126 @@
+/* Impressum Styles */
+:root {
+  --dark-bg: #0e0e0e;
+  --dark-container: #111;
+  --border-radius: 0.75rem;
+  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --primary-font: sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 8rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeSlideUp 1s ease-out forwards;
+  font-family: var(--primary-font);
+}
+
+.container h1 {
+  font-family: "Orbitron", var(--primary-font);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.impressum-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--dark-container);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.impressum-section {
+  margin-bottom: 2rem;
+}
+
+.impressum-section h2 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  font-family: "Orbitron", var(--primary-font);
+}
+
+.impressum-section p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.impressum-section a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.impressum-section a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.impressum-info {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.impressum-info strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.impressum-info span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .impressum-container {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .impressum-info {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .impressum-section h2 {
+    font-size: 1.1rem;
+  }
+}
