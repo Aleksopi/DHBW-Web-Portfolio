@@ -22,6 +22,7 @@
   $models = [];
 
   $selectedBrand = isset($_GET['brand']) ? $_GET['brand'] : '';
+  $selectedModel = isset($_GET['model']) ? $_GET['model'] : '';
 
   foreach ($folders as $folder) {
     if ($folder === '.' || $folder === '..') continue;
@@ -64,7 +65,7 @@
         <option value="">Alle Modelle</option>
         <?php
           foreach ($models as $model) {
-            $selected = (isset($_GET['model']) && $_GET['model'] === $model) ? 'selected' : '';
+            $selected = ($selectedModel === $model) ? 'selected' : '';
             echo '<option value="'.htmlspecialchars($model).'" '.$selected.'>'.htmlspecialchars($model).'</option>';
           }
         ?>
@@ -79,34 +80,35 @@
       foreach ($folders as $folder) {
         if ($folder === '.' || $folder === '..') continue;
         $jsonPath = "$carsDir/$folder/data.json";
-        if (file_exists($jsonPath)) {
-          $jsonContent = file_get_contents($jsonPath);
-          $carData = json_decode($jsonContent, true);
+        if (!file_exists($jsonPath)) continue;
 
-          $carName = $carData['name'] ?? 'Unbekanntes Auto';
-          $carBrand = $carData['brand'] ?? '';
-          $carModel = $carData['model'] ?? '';
-          $firstImage = $carData['images'][0] ?? '';
+        $jsonContent = file_get_contents($jsonPath);
+        $carData = json_decode($jsonContent, true);
 
-          if (
-            ($selectedBrand !== '' && $carBrand !== $selectedBrand) ||
-            (isset($_GET['model']) && $_GET['model'] !== '' && $carModel !== $_GET['model'])
-          ) {
-            continue;
-          }
+        $carName = $carData['name'] ?? 'Unbekanntes Auto';
+        $carBrand = $carData['brand'] ?? '';
+        $carModel = $carData['model'] ?? '';
+        $firstImage = $carData['images'][0] ?? '';
 
-          $imagePath = "assets/cars/" . rawurlencode($folder) . "/" . rawurlencode($firstImage);
-
-          echo '
-            <div class="gallery-item">
-              <img src="'.htmlspecialchars($imagePath).'" alt="'.htmlspecialchars($carName).'">
-              <div class="overlay">
-                <h3>'.htmlspecialchars($carName).'</h3>
-                <a href="#" class="overlay-btn">Anschauen</a>
-              </div>
-            </div>
-          ';
+        if (
+          ($selectedBrand && $carBrand !== $selectedBrand) ||
+          ($selectedModel && $carModel !== $selectedModel)
+        ) {
+          continue;
         }
+
+        $imagePath = "assets/cars/" . rawurlencode($folder) . "/" . rawurlencode($firstImage);
+        $detailsLink = "details.php?id=" . urlencode($folder);
+
+        echo '
+          <a href="' . htmlspecialchars($detailsLink) . '" class="gallery-item">
+            <img src="'.htmlspecialchars($imagePath).'" alt="'.htmlspecialchars($carName).'">
+            <div class="overlay">
+              <h3>'.htmlspecialchars($carName).'</h3>
+              <span class="overlay-btn">Anschauen</span>
+            </div>
+          </a>
+        ';
       }
     ?>
   </div>
