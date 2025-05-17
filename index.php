@@ -117,53 +117,11 @@
   <section class="gallery-section">
     <div class="gallery-header">
       <h2>Meine Galerie</h2>
-      <p>Ein Blick auf ausgewählte Momente und Designs</p>
+      <p>Ein Blick auf ausgewählte Fahrzeuge</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="./assets/img/picture/BDD6D2AF-9C4E-49FB-895A-BEF59E6C1CA8_1_105_c.jpeg" alt="Bild 1">
-        <div class="overlay">
-          <h3>Ferrari Roma</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg" alt="Bild 2">
-        <div class="overlay">
-          <h3>Ferrari F40</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="./assets/img/picture/DE96FC20-3717-4ACE-B4DB-97B314ED072F_1_105_c.jpeg" alt="Bild 3">
-        <div class="overlay">
-          <h3>Ferrari SF90</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="./assets/img/picture/F349224B-F562-489B-B149-988FF6143689_1_105_c.jpeg" alt="Bild 4">
-        <div class="overlay">
-          <h3>Ferrari Testarossa</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="./assets/img/picture/EE5F6EC0-33A4-4120-A83B-A865E564ED26_1_105_c.jpeg" alt="Bild 5">
-        <div class="overlay">
-          <h3>Ferrari LaFerrari</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="./assets/img/picture/CF0F4658-C6BD-42AE-AA63-051C8DD9DD07_1_105_c.jpeg" alt="Bild 6">
-        <div class="overlay">
-          <h3>Ferrari Enzo</h3>
-          <a href="#" class="overlay-btn">Anschauen</a>
-        </div>
-      </div>
-    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
   </section>
+
 
   <section class="italia"></section>
   <?php include_once('./inc/footer.inc.php'); ?>

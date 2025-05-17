@@ -23,7 +23,7 @@ const slideCars = [
 let slides = [];
 let currentSlide = 0;
 
-// DOM-Elemente holen
+// DOM-Elemente für Highlight-Slider
 const titleEl = document.getElementById("highlight-title");
 const sloganEl = document.getElementById("highlight-slogan");
 const descEl = document.getElementById("highlight-description");
@@ -40,7 +40,7 @@ function updateSlide(index) {
   linkEl.href = slide.link;
 }
 
-// JSON-Daten laden
+// Highlight-Slides laden
 async function loadSlides() {
   for (const car of slideCars) {
     try {
@@ -59,28 +59,24 @@ async function loadSlides() {
     }
   }
 
-  // Zeige das erste Slide
   if (slides.length > 0) {
     updateSlide(0);
   }
 }
 
-// Steuerung: Vorheriger Slide
 document.getElementById("prev-slide").addEventListener("click", () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   updateSlide(currentSlide);
 });
 
-// Steuerung: Nächster Slide
 document.getElementById("next-slide").addEventListener("click", () => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide(currentSlide);
 });
 
-// Lade alle Slides beim Start
 loadSlides();
 
-// Video-Steuerung auf Startzeit und Loop-Ende begrenzen
+// Video-Steuerung
 const video = document.getElementById('heroVideo');
 if (video) {
   video.addEventListener('loadedmetadata', () => {
@@ -94,7 +90,7 @@ if (video) {
   });
 }
 
-// Scroll-Animation für die Video-Grid
+// Scroll-Animation für Video-Grid
 window.addEventListener('scroll', () => {
   const grid = document.querySelector('.video-grid');
   if (!grid) return;
@@ -106,3 +102,46 @@ window.addEventListener('scroll', () => {
     grid.classList.add('animate-in');
   }
 });
+
+// Dynamische Galerie (aus data.json und erstem Bild)
+const carFolders = [
+  "audi-rs6",
+  "Ferrari-296-GTS",
+  "Ferrari-DODICI",
+  "Ferrari-LAFerrari-Blu-Ahrabian",
+  "ferrari-f40",
+  "ferrari-F80"
+  // weitere Ordner hier ergänzen
+];
+
+const galleryGrid = document.getElementById("gallery-grid");
+
+async function generateGallery() {
+  if (!galleryGrid) return;
+
+  for (const folder of carFolders) {
+    try {
+      const res = await fetch(`./assets/cars/${folder}/data.json`);
+      const data = await res.json();
+
+      const imagePath = `./assets/cars/${folder}/${data.images[0]}`;
+      const name = data.name || folder;
+
+      const itemHTML = `
+        <div class="gallery-item">
+          <img src="${imagePath}" alt="${name}">
+          <div class="overlay">
+            <h3>${name}</h3>
+            <a href="./details.php?id=${folder}" class="overlay-btn">Anschauen</a>
+          </div>
+        </div>
+      `;
+
+      galleryGrid.insertAdjacentHTML("beforeend", itemHTML);
+    } catch (err) {
+      console.error(`Fehler beim Laden der Galerie für ${folder}:`, err);
+    }
+  }
+}
+
+generateGallery();
