@@ -88,24 +88,30 @@
 
 <section class="brand-strip">
   <div class="brand-grid">
-    <div class="brand-item">
-      <img src="assets/img/picture/ferrari-daytona-sp3-la-prova-a-spa.jpg" alt="Ferrari" />
-      <div class="brand-label"><a href="./gallary.php?brand=Ferrari&model=">Ferrari</a></div>
-    </div>
-    <div class="brand-item">
-      <img src="assets/img/picture/6714563edecb52a5f00eb0257fc97028.jpeg" alt="Lamborghini" />
-      <div class="brand-label"><a href="./gallary.php?brand=Lamborghini&model=">Lamborghini</a></div>
-    </div>
-    <div class="brand-item">
-      <img src="assets/img/picture/porsche-gt25-2.jpg" alt="Porsche" />
-      <div class="brand-label"><a href="./gallary.php?brand=Porsche&model=">Porsche</a></div>
-    </div>
-    <div class="brand-item">
-      <img src="assets/img/picture/1200-L-dj-collector-cette-rare-bugatti-chiron-sport-110-ans-est-vendre.jpg" alt="Buggati" />
-      <div class="brand-label"><a href="./gallary.php?brand=Buggati&model=">Buggati</a></div>
-    </div>
+
+    <a href="./gallary.php?brand=Ferrari&model=" class="brand-item">
+      <img src="./assets/img/picture/LaFerrari-Hybrid-Front1.jpg" alt="Ferrari" />
+      <div class="brand-label">Ferrari</div>
+    </a>
+
+    <a href="./gallary.php?brand=Pagani&model=" class="brand-item">
+      <img src="./assets/img/picture/img03.jpg" alt="Pagani" />
+      <div class="brand-label">Pagani</div>
+    </a>
+
+    <a href="./gallary.php?brand=Porsche&model=" class="brand-item">
+      <img src="./assets/img/picture/USED-Taking-a-Sneak-Peek-at-the-2022-Porsche-Car-Lineup.jpg" alt="Porsche" />
+      <div class="brand-label">Porsche</div>
+    </a>
+
+    <a href="./gallary.php?brand=Bugatti&model=" class="brand-item">
+      <img src="./assets/img/picture/s-l1200.jpg" alt="Bugatti" />
+      <div class="brand-label">Bugatti</div>
+    </a>
+
   </div>
 </section>
+
 
   
   <section class="gallery-section">

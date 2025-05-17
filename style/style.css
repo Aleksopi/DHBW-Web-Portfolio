@@ -402,12 +402,12 @@
 
 .brand-label {
   position: absolute;
-  top: 50%;
+  bottom: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: #fff;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: white; /* weißer Text */
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
   font-family: 'Orbitron', sans-serif;
@@ -421,8 +421,22 @@
 }
 
 .brand-item:hover .brand-label {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.brand-item:hover .brand-label {
   background: rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%) scale(1.05);
+}
+
+.brand-label a {
+  color: white;
+  text-decoration: none;
+}
+
+.brand-label a:hover {
+  color: white;
 }
 
 /* Responsiveness */
