@@ -273,107 +273,90 @@
 
 /** eqjnqnf ****/
 /* Highlight Video Section */
-.highlight.video {
-  background-color: #000;
-  padding: 5rem 2rem;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Grid-Layout mit gleichmäßigem Abstand */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+/* NEU: Grid mit 2 Videos + 1 Textblock in Reihe (und umgekehrt) */
+.video-pattern-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* gleichmäßiger Innenabstand links/rechts */
-  align-items: center;
+  padding: 2rem;
 }
 
-/* Zentrierung & Animation */
-.video-block,
-.text-block {
+.video-pattern-row {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
-  opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  flex-wrap: wrap;
 }
 
-.text-block {
-  transform: translateX(-100px);
-  flex-direction: column;
+.video-pattern-row.reverse {
+  flex-direction: row-reverse;
 }
 
-/* Aktive Animation */
-.video-grid.animate-in .video-block,
-.video-grid.animate-in .text-block {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Video Style */
-.portrait-video {
+/* Video Styling – gleich wie vorher */
+.video-pattern-row video.portrait-video {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  max-width: 250px;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portrait-video:hover {
+.video-pattern-row video.portrait-video:hover {
   transform: scale(1.02);
   box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
 }
 
-/* Textblock */
-.text-block {
+/* Textblock in Kombination */
+.video-pattern-row .text-block {
+  flex: 1 1 30%;
   background-color: #111;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  max-width: 500px;
+  color: white;
   text-align: center;
+  max-width: 350px;
 }
 
-.text-block h2 {
+.video-pattern-row .text-block h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.text-block p {
+.video-pattern-row .text-block p {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Responsive */
+/* Responsive Verhalten */
 @media (max-width: 900px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .video-block,
-  .text-block {
-    transform: translateY(40px);
+  .video-pattern-row,
+  .video-pattern-row.reverse {
     flex-direction: column;
+    align-items: center;
   }
 
-  .video-grid.animate-in .video-block,
-  .video-grid.animate-in .text-block {
-    transform: translateY(0);
-  }
-
-  .portrait-video {
+  .video-pattern-row video.portrait-video,
+  .video-pattern-row .text-block {
     max-width: 100%;
   }
+
+  .video-pattern-grid {
+    padding: 1rem;
+  }
 }
+.highlight.video {
+  background-color: #000;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+
 /** logo ***/
 
 /* Brand Strip mit modernem Look */

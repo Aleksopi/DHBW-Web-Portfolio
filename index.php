@@ -54,50 +54,59 @@
 
 
   <section class="highlight video">
-    <div class="video-grid">
-      <div class="video-block">
-        <video class="portrait-video" autoplay muted loop playsinline>
-          <source src="./assets/video/videoplayback (1).webm" type="video/webm">
-          Dein Browser unterstützt dieses Videoformat nicht.
-        </video>
-      </div>
-      <div class="text-block">
-        <h2>Ferrari Vibes</h2>
-        <p>Pure Leidenschaft auf der Rennstrecke – aufgenommen in Tokio.</p>
-      </div>
+   <div class="video-pattern-grid">
+
+  <!-- Zeile 1: Video - Video - Text -->
+  <div class="video-pattern-row">
+    <video class="portrait-video" autoplay muted loop playsinline>
+      <source src="./assets/video/videoplayback (1).webm" type="video/webm">
+    </video>
+    <video class="portrait-video" autoplay muted loop playsinline>
+      <source src="./assets/cars/Reels/Komp 1_1.mp4" type="video/webm">
+    </video>
+    <div class="text-block">
+      <h2>Ferrari Vibes</h2>
+      <p>Pure Leidenschaft auf der Rennstrecke – aufgenommen in Tokio.</p>
+    </div>
+  </div>
+
+  <!-- Zeile 2: Textblock - Video - Video -->
+    <div class="video-pattern-row">
       <div class="text-block">
         <h2>Emotion & Technik</h2>
         <p>Wenn Kraft auf Eleganz trifft – der Sound, das Design, das Gefühl.</p>
       </div>
-      <div class="video-block">
-        <video class="portrait-video" autoplay muted loop playsinline>
-          <source src="./assets/video/videoplayback (2).webm" type="video/webm">
-          Dein Browser unterstützt dieses Videoformat nicht.
-        </video>
-      </div>
+      <video class="portrait-video" autoplay muted loop playsinline>
+        <source src="./assets/cars/Reels/Jesko x Singer_prob4.mp4" type="video/webm">
+      </video>
+      <video class="portrait-video" autoplay muted loop playsinline>
+        <source src="./assets/video/videoplayback (2).webm" type="video/webm">
+      </video>
     </div>
+  </div>
   </section>
 
-  <section class="brand-strip">
-    <div class="brand-grid">
-      <div class="brand-item">
-        <img src="assets/img/picture/ferrari-daytona-sp3-la-prova-a-spa.jpg" alt="Ferrari" />
-        <div class="brand-label"><a href="./gallary.php?brand=Ferrari&model=">Ferrari</a></div>
-      </div>
-      <div class="brand-item">
-        <img src="assets/img/picture/6714563edecb52a5f00eb0257fc97028.jpeg" alt="Lamborghini" />
-        <div class="brand-label">Lamborghini</div>
-      </div>
-      <div class="brand-item">
-        <img src="assets/img/picture/porsche-gt25-2.jpg" alt="Porsche" />
-        <div class="brand-label">Porsche</div>
-      </div>
-      <div class="brand-item">
-        <img src="assets/img/picture/1200-L-dj-collector-cette-rare-bugatti-chiron-sport-110-ans-est-vendre.jpg" alt="Buggati" />
-        <div class="brand-label">Buggati</div>
-      </div>
+<section class="brand-strip">
+  <div class="brand-grid">
+    <div class="brand-item">
+      <img src="assets/img/picture/ferrari-daytona-sp3-la-prova-a-spa.jpg" alt="Ferrari" />
+      <div class="brand-label"><a href="./gallary.php?brand=Ferrari&model=">Ferrari</a></div>
     </div>
-  </section>
+    <div class="brand-item">
+      <img src="assets/img/picture/6714563edecb52a5f00eb0257fc97028.jpeg" alt="Lamborghini" />
+      <div class="brand-label"><a href="./gallary.php?brand=Lamborghini&model=">Lamborghini</a></div>
+    </div>
+    <div class="brand-item">
+      <img src="assets/img/picture/porsche-gt25-2.jpg" alt="Porsche" />
+      <div class="brand-label"><a href="./gallary.php?brand=Porsche&model=">Porsche</a></div>
+    </div>
+    <div class="brand-item">
+      <img src="assets/img/picture/1200-L-dj-collector-cette-rare-bugatti-chiron-sport-110-ans-est-vendre.jpg" alt="Buggati" />
+      <div class="brand-label"><a href="./gallary.php?brand=Buggati&model=">Buggati</a></div>
+    </div>
+  </div>
+</section>
+
   
   <section class="gallery-section">
     <div class="gallery-header">
