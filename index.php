@@ -37,14 +37,13 @@
   <section class="highlight animate-on-scroll">
     <div class="highlight-container reverse-layout">
       <div class="highlight-text slide-left">
-        <h2 id="highlight-title">Ferrari F40:<br>Lorem ipsum dolor sit amet.</h2>
-        <p id="highlight-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque impedit...
-        </p>
-        <a href="#" class="read-more">Anschauen<span>&#10140;</span></a>
+        <h2 id="highlight-title">Wird geladen...</h2>
+        <h3 id="highlight-slogan">Bitte warten...</h3>
+        <p id="highlight-description">Bitte warten...</p>
+        <a href="#" class="read-more" id="highlight-link">Anschauen <span>&#10140;</span></a>
       </div>
       <div class="highlight-image slide-right">
-        <img id="highlight-image" src="./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg" alt="Highlight Image" loading="lazy" />
+        <img id="highlight-image" src="" alt="Highlight Image" loading="lazy" />
         <div class="slider-controls">
           <button id="prev-slide">&#8592;</button>
           <button id="next-slide">&#8594;</button>
@@ -52,6 +51,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="highlight video">
     <div class="video-grid">
@@ -82,7 +82,7 @@
     <div class="brand-grid">
       <div class="brand-item">
         <img src="assets/img/picture/ferrari-daytona-sp3-la-prova-a-spa.jpg" alt="Ferrari" />
-        <div class="brand-label">Ferrari</div>
+        <div class="brand-label"><a href="./gallary.php?brand=Ferrari&model=">Ferrari</a></div>
       </div>
       <div class="brand-item">
         <img src="assets/img/picture/6714563edecb52a5f00eb0257fc97028.jpeg" alt="Lamborghini" />
@@ -98,9 +98,7 @@
       </div>
     </div>
   </section>
-
-
-
+  
   <section class="gallery-section">
     <div class="gallery-header">
       <h2>Meine Galerie</h2>
