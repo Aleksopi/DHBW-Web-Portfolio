@@ -261,109 +261,102 @@
   }
 }
 
+#highlight-slogan {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0.5rem 0 1.5rem;
+  font-style: italic;
+}
+
+
+
 /** eqjnqnf ****/
 /* Highlight Video Section */
-.highlight.video {
-  background-color: #000;
-  padding: 5rem 2rem;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Grid-Layout mit gleichmäßigem Abstand */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+/* NEU: Grid mit 2 Videos + 1 Textblock in Reihe (und umgekehrt) */
+.video-pattern-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* gleichmäßiger Innenabstand links/rechts */
-  align-items: center;
+  padding: 2rem;
 }
 
-/* Zentrierung & Animation */
-.video-block,
-.text-block {
+.video-pattern-row {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
-  opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  flex-wrap: wrap;
 }
 
-.text-block {
-  transform: translateX(-100px);
-  flex-direction: column;
+.video-pattern-row.reverse {
+  flex-direction: row-reverse;
 }
 
-/* Aktive Animation */
-.video-grid.animate-in .video-block,
-.video-grid.animate-in .text-block {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Video Style */
-.portrait-video {
+/* Video Styling – gleich wie vorher */
+.video-pattern-row video.portrait-video {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  max-width: 250px;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.portrait-video:hover {
+.video-pattern-row video.portrait-video:hover {
   transform: scale(1.02);
   box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
 }
 
-/* Textblock */
-.text-block {
+/* Textblock in Kombination */
+.video-pattern-row .text-block {
+  flex: 1 1 30%;
   background-color: #111;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-  max-width: 500px;
+  color: white;
   text-align: center;
+  max-width: 350px;
 }
 
-.text-block h2 {
+.video-pattern-row .text-block h2 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.text-block p {
+.video-pattern-row .text-block p {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Responsive */
+/* Responsive Verhalten */
 @media (max-width: 900px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .video-block,
-  .text-block {
-    transform: translateY(40px);
+  .video-pattern-row,
+  .video-pattern-row.reverse {
     flex-direction: column;
+    align-items: center;
   }
 
-  .video-grid.animate-in .video-block,
-  .video-grid.animate-in .text-block {
-    transform: translateY(0);
-  }
-
-  .portrait-video {
+  .video-pattern-row video.portrait-video,
+  .video-pattern-row .text-block {
     max-width: 100%;
   }
+
+  .video-pattern-grid {
+    padding: 1rem;
+  }
 }
+.highlight.video {
+  background-color: #000;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+
 /** logo ***/
 
 /* Brand Strip mit modernem Look */
@@ -409,12 +402,12 @@
 
 .brand-label {
   position: absolute;
-  top: 50%;
+  bottom: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: #fff;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  color: white; /* weißer Text */
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
   font-family: 'Orbitron', sans-serif;
@@ -428,8 +421,22 @@
 }
 
 .brand-item:hover .brand-label {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.brand-item:hover .brand-label {
   background: rgba(0, 0, 0, 0.5);
   transform: translate(-50%, -50%) scale(1.05);
+}
+
+.brand-label a {
+  color: white;
+  text-decoration: none;
+}
+
+.brand-label a:hover {
+  color: white;
 }
 
 /* Responsiveness */

@@ -1,3 +1,4 @@
+// Scroll-Animation für alle Elemente mit animate-on-scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -11,40 +12,57 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
   observer.observe(el);
 });
 
-const slides = [
-  {
-    title: "Ferrari F40:<br>Eine Motorsport-Ikone.",
-    description: "Der Ferrari F40 ist bekannt für seine rohe Leistung und ikonische Form.",
-    image: "./assets/img/picture/738D596E-744E-495D-A19B-791236156C0F_1_105_c.jpeg"
-  },
-  {
-    title: "Ferrari F40:<br>Eine Motorsport-Ikone.",
-    description: "Der Ferrari F40 ist bekannt für seine rohe Leistung und ikonische Form.",
-    image: "./assets/img/picture/7EADC893-9E88-43A8-A091-306E9C3C639E_1_105_c.jpeg"
-  },
-  {
-    title: "Ferrari F40:<br>Noch einen",
-    description: "Auch ein Auto",
-    image: "./assets/img/picture/6EC25E8D-CD8C-4B5C-8A46-72E7BDA1825B_1_105_c.jpeg"
-  },
-  {
-    title: "Und noch ein Ferrari F40:<br>Und noch ein",
-    description: "Auto macht brum brum",
-    image: "./assets/img/picture/F349224B-F562-489B-B149-988FF6143689_1_105_c.jpeg"
-  }
+// Dynamische Highlight-Slideshow
+const slideCars = [
+  "audi-rs6",
+  "Ferrari-296-GTS",
+  "Ferrari-DODICI",
+  "Ferrari-LAFerrari-Blu-Ahrabian"
 ];
 
+let slides = [];
 let currentSlide = 0;
 
+// DOM-Elemente für Highlight-Slider
 const titleEl = document.getElementById("highlight-title");
+const sloganEl = document.getElementById("highlight-slogan");
 const descEl = document.getElementById("highlight-description");
 const imgEl = document.getElementById("highlight-image");
+const linkEl = document.getElementById("highlight-link");
 
+// Funktion zur Anzeige eines Slides
 function updateSlide(index) {
   const slide = slides[index];
   titleEl.innerHTML = slide.title;
+  sloganEl.textContent = slide.slogan || "";
   descEl.textContent = slide.description;
   imgEl.src = slide.image;
+  linkEl.href = slide.link;
+}
+
+// Highlight-Slides laden
+async function loadSlides() {
+  for (const car of slideCars) {
+    try {
+      const res = await fetch(`./assets/cars/${car}/data.json`);
+      const data = await res.json();
+
+      slides.push({
+      title: data.name,
+      slogan: data.slogan || "",
+      description: data.short_description || data.description,
+      image: `./assets/cars/${car}/${data.images[0]}`,
+      link: `./details.php?id=${car}`
+    });
+
+    } catch (err) {
+      console.error(`Fehler beim Laden von ${car}:`, err);
+    }
+  }
+
+  if (slides.length > 0) {
+    updateSlide(0);
+  }
 }
 
 document.getElementById("prev-slide").addEventListener("click", () => {
@@ -57,22 +75,27 @@ document.getElementById("next-slide").addEventListener("click", () => {
   updateSlide(currentSlide);
 });
 
+loadSlides();
+
+// Video-Steuerung
 const video = document.getElementById('heroVideo');
+if (video) {
+  video.addEventListener('loadedmetadata', () => {
+    video.currentTime = 0;
+  });
 
-video.addEventListener('loadedmetadata', () => {
-  // Starte bei Sekunde 5
-  video.currentTime = 0;
-});
+  video.addEventListener('timeupdate', () => {
+    if (video.currentTime > 5) {
+      video.currentTime = 0;
+    }
+  });
+}
 
-video.addEventListener('timeupdate', () => {
-  // Stoppe bei Sekunde 15 (wenn kein loop)
-  if (video.currentTime > 5) {
-    video.currentTime = 0; // Zurückspulen oder video.pause();
-  }
-});
-
-  window.addEventListener('scroll', () => {
+// Scroll-Animation für Video-Grid
+window.addEventListener('scroll', () => {
   const grid = document.querySelector('.video-grid');
+  if (!grid) return;
+
   const rect = grid.getBoundingClientRect();
   const trigger = window.innerHeight * 0.85;
 
@@ -80,3 +103,46 @@ video.addEventListener('timeupdate', () => {
     grid.classList.add('animate-in');
   }
 });
+
+// Dynamische Galerie (aus data.json und erstem Bild)
+const carFolders = [
+  "audi-rs6",
+  "Ferrari-296-GTS",
+  "Ferrari-DODICI",
+  "Ferrari-LAFerrari-Blu-Ahrabian",
+  "ferrari-f40",
+  "ferrari-F80"
+  // weitere Ordner hier ergänzen
+];
+
+const galleryGrid = document.getElementById("gallery-grid");
+
+async function generateGallery() {
+  if (!galleryGrid) return;
+
+  for (const folder of carFolders) {
+    try {
+      const res = await fetch(`./assets/cars/${folder}/data.json`);
+      const data = await res.json();
+
+      const imagePath = `./assets/cars/${folder}/${data.images[0]}`;
+      const name = data.name || folder;
+
+      const itemHTML = `
+        <div class="gallery-item">
+          <img src="${imagePath}" alt="${name}">
+          <div class="overlay">
+            <h3>${name}</h3>
+            <a href="./details.php?id=${folder}" class="overlay-btn">Anschauen</a>
+          </div>
+        </div>
+      `;
+
+      galleryGrid.insertAdjacentHTML("beforeend", itemHTML);
+    } catch (err) {
+      console.error(`Fehler beim Laden der Galerie für ${folder}:`, err);
+    }
+  }
+}
+
+generateGallery();
