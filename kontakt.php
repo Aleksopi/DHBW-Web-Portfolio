@@ -15,9 +15,12 @@
 
 <body>
   <?php include './inc/nav.inc.php'; ?>
-  <div class="container">
-    <h1>Kontakt</h1>
+ <section class="kontakt-header">
+  <img src="./assets/cars/audi-rs6/back.jpg" alt="Hintergrundbild" class="header-bg">
+  <h1>Kontakt</h1>
+</section>
 
+<div class="container">
     <form class="contact-form" action="#" method="POST">
       <div class="form-group">
         <label for="name">Name *</label>

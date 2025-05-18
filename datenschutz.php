@@ -12,8 +12,8 @@
     <?php include_once('./inc/nav.inc.php'); ?>
 
 
-    <div class="container"><section class="datenschutz-header">
-        <img src="assets/cars/audi-rs6/image.png" alt="Hintergrund" class="header-bg" />    
+<div class="container"><section class="datenschutz-header">
+        <img src="./assets/cars/audi-rs6/back.jpg" alt="Hintergrund" class="header-bg" />    
         <h1>Datenschutzerklärung</h1>
     </section>
     <div class="container">
@@ -94,10 +94,10 @@
             <div><span>Musterstraße 1, 12345 Musterstadt</span></div>
         </div>
         </section>
-
-
     </div>
   </div>
+  </div>
+
   <?php include_once('./inc/footer.inc.php'); ?>
 </body>
 </html>
