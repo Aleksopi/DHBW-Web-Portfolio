@@ -16,7 +16,7 @@
 <body>
   <?php include './inc/nav.inc.php'; ?>
  <section class="kontakt-header">
-  <img src="./assets/cars/audi-rs6/back.jpg" alt="Hintergrundbild" class="header-bg">
+  <img src="./assets/cars/ferrari-DODICI/IMG_4798_1.jpg" alt="Hintergrundbild" class="header-bg">
   <h1>Kontakt</h1>
 </section>
 
