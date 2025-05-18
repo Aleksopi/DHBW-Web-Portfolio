@@ -1,162 +1,213 @@
-/* ./style/about.css */ Arthur
+/* Datenschutz Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-/* Stellt sicher, dass das Wurzelelement die volle Höhe einnimmt, falls benötigt für Footer-Positionierung etc. */
+/* Dark Mode - Farben */
+:root {
+  --text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --primary-font: sans-serif;
+  --dark-bg: #0e0e0e;
+  --dark-container: #111;
+  --text-color: #e0e0e0;
+  --text-muted: #aaaaaa;
+  --accent: #e74c3c;
+  --heading-color: #ffffff;
+  --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  
+}
+
 html {
   height: 100%;
 }
 
 body {
-  font-family: 'Arial', sans-serif; /* Fallback-Schriftart, Orbitron wird für spezielle Elemente geladen */
-  color: #333;
+  
+  background-color: var(--dark-bg);
+  color: var(--text-color);
   line-height: 1.6;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
-/* Hauptcontainer für den Inhalt der Über-Mich-Seite */
 .about-page-container {
-  flex-grow: 1; 
-  max-width: 960px; 
-  margin: 5rem auto 2rem; 
-  padding: 1.5rem 2rem; 
-  background-color: #ffffff; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+  flex-grow: 1;
+  max-width: 960px;
+  margin: 5rem auto 2rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--dark-container);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+.container {
+  max-width: 1200px;
+  margin: 8rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeSlideUp 1s ease-out forwards;
+  font-family: var(--primary-font);
+}
+.container h1 {
+  font-family: "Orbitron", var(--primary-font);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Kopfbereich der Seite */
+
 .about-header {
-  text-align: center; 
-  margin-bottom: 2.5rem; 
-  padding-bottom: 1.5rem; 
-  border-bottom: 1px solid #e0e0e0; 
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 0.5;
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 
 .about-header h1 {
-  font-family: 'Orbitron', sans-serif; 
-  font-size: 2.8rem; 
-  color: #2c3e50; 
-  margin-bottom: 0.5rem; 
+  font-family: "Orbitron", var(--primary-font);
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  padding: 0 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: var(--text-shadow);
+  margin: 0;
+  line-height: 1.2;
 }
 
-.about-header .subtitle {
-  font-size: 1.15rem; 
-  color: #555; 
-  font-style: italic; 
+.brand-name {
+  font-family: "Orbitron", var(--primary-font);
+  font-weight: 700; /* Fett */
 }
-
-
-/* Stil für einzelne Abschnitte (Wer ich bin, Fähigkeiten etc.) */
 .about-section {
-  margin-bottom: 2.5rem; 
+  margin-bottom: 2.5rem;
 }
 
 .about-section:last-child {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .about-section h2 {
-  font-family: 'Orbitron', sans-serif; 
-  font-size: 2rem; 
-  color: #34495e; 
-  margin-bottom: 1.2rem; 
-  padding-bottom: 0.6rem; 
-  border-bottom: 2px solid #7f8c8d; 
-  position: relative; 
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: var(--heading-color);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border-color);
+  position: relative;
 }
 
-.about-section h2::after { 
+.about-section h2::after {
   content: '';
   display: block;
   width: 50px;
   height: 3px;
-  background-color: #e74c3c; 
+  background-color: var(--accent);
   margin-top: 0.4rem;
 }
 
-
-.about-section p,
+.about-section p{
+  line-height: 1.75;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding-left: 2.5rem;
+}
 .about-section ul {
-  line-height: 1.75; 
-  color: #4a4a4a; 
-  font-size: 1rem; 
+  line-height: 1.75;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding-left: 4.5rem;
 }
 
-/* Stil für die Fähigkeiten-Liste */
 .skills-list {
-  list-style: none; 
-  padding-left: 0; 
+  list-style: none;
+  padding-left: 0;
 }
 
 .skills-list li {
-  padding: 0.6rem 0.2rem; 
-  border-bottom: 1px dashed #cccccc; 
-  display: flex; 
-  align-items: center; 
+  padding: 0.6rem 0.2rem;
+  border-bottom: 1px dashed var(--border-color);
+  display: flex;
+  align-items: center;
 }
 
 .skills-list li:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .skills-list li::before {
-  content: "\f00c"; 
-  font-family: "Font Awesome 6 Free"; 
-  font-weight: 900; 
-  margin-right: 12px; 
-  color: #27ae60; 
-  font-size: 1.1em; 
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 12px;
+  color: #2ecc71;
+  font-size: 1.1em;
 }
 
-/* Optional: Container für ein Profilbild */
 .profile-image-container {
-  text-align: center; 
-  margin: 2rem 0; 
+  text-align: center;
+  margin: 2rem 0;
 }
 
 .profile-image-container img {
-  max-width: 220px; 
-  height: auto; 
-  border-radius: 50%; 
-  border: 6px solid #f0f0f0; 
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15); 
+  max-width: 220px;
+  height: auto;
+  border-radius: 50%;
+  border: 6px solid #2b2b2b;
+  box-shadow: 0 5px 12px var(--shadow-color);
 }
 
-/* Optional: Stil für Werdegangseinträge (Timeline-ähnlich) */
 .timeline-item {
-    background-color: #f9f9f9;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid #e74c3c; 
-    border-radius: 0 4px 4px 0;
+  background-color: #1a1a1a;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 4px 4px 0;
 }
 .timeline-item h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    color: #34495e;
-    margin-top: 0;
-    margin-bottom: 0.3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 0.3rem;
 }
 .timeline-item .timeline-date {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    margin-bottom: 0.5rem;
-    font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-style: italic;
 }
 
-/* Fade-In Animation für Text (wie zuvor besprochen) */
 .fade-in-text {
-  opacity: 0; 
-  animation: fadeIn 1.2s 0.3s ease-out forwards; 
+  opacity: 0;
+  animation: fadeIn 1.2s 0.3s ease-out forwards;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(25px); 
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -164,13 +215,13 @@ body {
   }
 }
 
-/* --- NEUE STYLES FÜR INTERAKTIVEN TEAM-ABSCHNITT --- */
+/* Interaktives Team */
 .interactive-team .team-icons-container {
-  display: flex; /* Icons nebeneinander anordnen */
-  flex-wrap: wrap; /* Umbruch bei Bedarf */
-  gap: 20px; /* Abstand zwischen den Icons */
-  justify-content: center; /* Icons zentrieren */
-  margin-bottom: 2rem; /* Abstand zum Detailbereich */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .team-member-icon {
@@ -182,62 +233,62 @@ body {
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   text-align: center;
-  width: 100px; /* Feste Breite für jedes Icon-Element */
+  width: 100px;
 }
 
 .team-member-icon img {
-  width: 60px; /* Größe des Icons */
-  height: 60px; /* Größe des Icons */
-  border-radius: 50%; /* Runde Icons, falls gewünscht (ggf. anpassen, wenn SVGs nicht quadratisch sind) */
-  object-fit: cover; /* Stellt sicher, dass das Bild den Bereich füllt, ohne das Seitenverhältnis zu verzerren */
-  margin-bottom: 8px; /* Abstand zwischen Icon und Name */
-  background-color: #f0f0f0; /* Hintergrund für den Fall, dass SVGs transparent sind */
-  padding: 5px; /* Kleiner Innenabstand um das SVG */
-  border: 2px solid transparent; /* Rand für den aktiven Zustand */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  background-color: #2a2a2a;
+  padding: 5px;
+  border: 2px solid transparent;
 }
 
 .team-member-icon span {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-color);
   font-weight: 500;
 }
 
 .team-member-icon:hover {
-  background-color: #e9e9e9;
+  background-color: #1d1d1d;
   transform: translateY(-3px);
 }
 
 .team-member-icon.active img {
-  border-color: #e74c3c; /* Akzentfarbe für aktives Icon */
+  border-color: var(--accent);
   box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 .team-member-icon.active span {
-  color: #e74c3c; /* Akzentfarbe für den Namen des aktiven Icons */
+  color: var(--accent);
   font-weight: 700;
 }
 
-
 .team-member-details-container {
-  position: relative; /* Für den Schließen-Button */
+  position: relative;
 }
 
 .team-member-text {
-  display: none; /* Standardmäßig versteckt */
+  display: none;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #1b1b1b;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  margin-top: 1rem; /* Abstand, falls Icons und Text gleichzeitig sichtbar wären */
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
   animation: slideDownFadeIn 0.5s ease-out forwards;
+  color: var(--text-color);
 }
 
 .team-member-text.active {
-  display: block; /* Sichtbar machen */
+  display: block;
 }
 
 .team-member-text h3 {
   font-family: 'Orbitron', sans-serif;
-  color: #34495e;
+  color: var(--heading-color);
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -249,15 +300,14 @@ body {
   background: none;
   border: none;
   font-size: 1.8rem;
-  color: #888;
+  color: var(--text-muted);
   cursor: pointer;
   line-height: 1;
   padding: 5px;
 }
 .close-details-btn:hover {
-  color: #333;
+  color: var(--heading-color);
 }
-
 
 @keyframes slideDownFadeIn {
   from {
@@ -269,38 +319,39 @@ body {
     transform: translateY(0);
   }
 }
-/* --- ENDE NEUE STYLES --- */
 
-
-/* Responsive Anpassungen für kleinere Bildschirme */
+/* Responsive */
 @media (max-width: 768px) {
   .about-page-container {
-    margin: 3rem 1rem 1rem; 
-    padding: 1rem 1.5rem; 
+    margin: 3rem 1rem 1rem;
+    padding: 1rem 1.5rem;
   }
 
   .about-header h1 {
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
   }
+
   .about-header .subtitle {
     font-size: 1rem;
   }
 
   .about-section h2 {
-    font-size: 1.7rem; 
+    font-size: 1.7rem;
   }
+
   .about-section h2::after {
     width: 40px;
     height: 2px;
   }
 
   .profile-image-container img {
-    max-width: 180px; 
+    max-width: 180px;
   }
 
   .team-member-icon {
     width: 80px;
   }
+
   .team-member-icon img {
     width: 50px;
     height: 50px;
@@ -309,27 +360,30 @@ body {
 
 @media (max-width: 480px) {
   .about-page-container {
-    margin: 2.5rem 1rem 1rem; 
-  }
-  .about-header h1 {
-    font-size: 1.8rem;
-  }
-  .about-header .subtitle {
-    font-size: 0.9rem;
-  }
-  .about-section h2 {
-    font-size: 1.5rem;
-  }
-  .about-page-container {
+    margin: 2.5rem 1rem 1rem;
     padding: 1rem;
   }
 
+  .about-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-header .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
   .team-icons-container {
-    gap: 15px; /* Weniger Abstand zwischen Icons auf kleinen Bildschirmen */
+    gap: 15px;
   }
+
   .team-member-icon {
-    width: calc(50% - 10px); /* Zwei Icons pro Reihe auf sehr kleinen Bildschirmen */
+    width: calc(50% - 10px);
   }
+
   .team-member-icon img {
     width: 45px;
     height: 45px;
