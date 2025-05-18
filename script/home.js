@@ -48,12 +48,13 @@ async function loadSlides() {
       const data = await res.json();
 
       slides.push({
-        title: data.name,
-        slogan: data.slogan || "",
-        description: data.description,
-        image: `./assets/cars/${car}/${data.images[0]}`,
-        link: `./details.php?id=${car}`
-      });
+      title: data.name,
+      slogan: data.slogan || "",
+      description: data.short_description || data.description,
+      image: `./assets/cars/${car}/${data.images[0]}`,
+      link: `./details.php?id=${car}`
+    });
+
     } catch (err) {
       console.error(`Fehler beim Laden von ${car}:`, err);
     }
