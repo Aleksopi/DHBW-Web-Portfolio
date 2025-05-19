@@ -10,6 +10,7 @@
     <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
     <link rel="stylesheet" href="./style/about.css" />
   </head>
+  
   <body>
     <nav>
       <?php include_once('./inc/nav.inc.php'); ?>
@@ -21,8 +22,6 @@
           <h1>Über Uns</h1>
         </div>
       </section>
-
-
     <main class="about-page-container">
     
       <section class="about-content">

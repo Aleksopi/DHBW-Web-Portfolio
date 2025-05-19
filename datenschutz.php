@@ -12,7 +12,7 @@
     <nav>
       <?php include_once('./inc/nav.inc.php'); ?>
     </nav>
-
+    
     <main>
       <section class="container">
         <div class="datenschutz-header">
