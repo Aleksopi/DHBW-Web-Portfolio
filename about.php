@@ -18,7 +18,7 @@
     <main class="about-page-header>  
       <section class="container">
         <div class="about-header">
-          <img src="./assets/cars/Carage/IMG_8344quer.jpg" alt="Über Uns Header" class="header-bg"/>
+          <img src="./assets/cars/porsche-gt25/porsche-gt2rs-2.jpg" alt="Über Uns Header" class="header-bg"/>
           <h1>Über Uns</h1>
         </div>
       </section>
