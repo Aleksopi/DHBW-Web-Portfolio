@@ -68,7 +68,6 @@
     </div>
 
     <section class="italia"></section>
-    <script src="./script/kontakt.js"></script>
   </main>
   <?php include './inc/footer.inc.php'; ?>
 </body>

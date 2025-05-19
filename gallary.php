@@ -113,7 +113,6 @@
         ?>
       </div>
     </section>
-    <script src="./script/gallary.js"></script>
     </main>
     <?php include_once('./inc/footer.inc.php'); ?>
   </body>
