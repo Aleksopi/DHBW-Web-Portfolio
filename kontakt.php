@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt</title>
-  <link rel="stylesheet" href="./style/fonts.css">
-  <link rel="stylesheet" href="./style/nav_footer.css" />
-  <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
-
-  <link rel="stylesheet" href="./style/kontakt.css" />
-
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="./style/fonts.css">
+    <link rel="stylesheet" href="./style/nav_footer.css" />
+    <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/kontakt.css" />
+  </head>
 
 <body>
   <?php include './inc/nav.inc.php'; ?>
- <section class="kontakt-header">
-  <img src="./assets/cars/ferrari-DODICI/IMG_4798_1.jpg" alt="Hintergrundbild" class="header-bg">
-  <h1>Kontakt</h1>
-</section>
+  <section class="kontakt-header">
+    <img src="./assets/cars/ferrari-DODICI/IMG_4798_1.jpg" alt="Hintergrundbild" class="header-bg">
+    <h1>Kontakt</h1>
+  </section>
 
-<div class="container">
+  <div class="container">
     <form class="contact-form" action="#" method="POST">
       <div class="form-group">
         <label for="name">Name *</label>
