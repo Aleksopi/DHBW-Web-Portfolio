@@ -13,59 +13,58 @@
   <body>
 
   <?php include_once('./inc/nav.inc.php'); ?>
-
-  <?php
-    $id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['id']) : null;
-    if (!$id) {
-        header('HTTP/1.0 404 Not Found');
-        echo '<p>Fehler: Keine Fahrzeug-ID angegeben.</p>';
-        exit;
-    }
-
-    $folderPath = __DIR__ . "/assets/cars/{$id}";
-    $jsonPath = "{$folderPath}/data.json";
-
-    if (!file_exists($jsonPath)) {
-        header('HTTP/1.0 404 Not Found');
-        echo '<p>Fehler: Fahrzeugdaten nicht gefunden.</p>';
-        exit;
-    }
-
-    $car = json_decode(file_get_contents($jsonPath), true);
-    if (json_last_error() !== JSON_ERROR_NONE) {
-        echo '<p>Fehler beim Parsen der JSON-Daten.</p>';
-        exit;
-    }
-  ?>
-
   <main>
-    <!-- Banner-Galerie -->
-  <div class="banner_gallery wrapperfull" id="image-preview">
     <?php
-    $totalImages = count($car['images']);
-    foreach (array_slice($car['images'], 0, 3) as $index => $img):
-      $isLast = $index === 2 && $totalImages > 3;
-    ?>
-      <div class="thumb" data-id="<?= $index ?>">
-        <img src="assets/cars/<?= htmlspecialchars($id) ?>/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
-        <?php if ($isLast): ?>
-          <div class="more-overlay">+<?= $totalImages - 3 ?> mehr</div>
-        <?php endif; ?>
-      </div>
-    <?php endforeach; ?>
-  </div>
+      $id = isset($_GET['id']) ? preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['id']) : null;
+      if (!$id) {
+          header('HTTP/1.0 404 Not Found');
+          echo '<p>Fehler: Keine Fahrzeug-ID angegeben.</p>';
+          exit;
+      }
 
-  <!-- Lightbox Container (versteckt bis ein Bild geklickt wird) -->
-  <div id="lightbox" class="lightbox hidden">
-    <div class="lightbox-content">
-      <span class="lightbox-close">&times;</span>
-      <img id="lightbox-img" src="" alt="Großansicht">
-      <div class="lightbox-nav">
-        <button id="prev-btn">&#10094;</button>
-        <button id="next-btn">&#10095;</button>
+      $folderPath = __DIR__ . "/assets/cars/{$id}";
+      $jsonPath = "{$folderPath}/data.json";
+
+      if (!file_exists($jsonPath)) {
+          header('HTTP/1.0 404 Not Found');
+          echo '<p>Fehler: Fahrzeugdaten nicht gefunden.</p>';
+          exit;
+      }
+
+      $car = json_decode(file_get_contents($jsonPath), true);
+      if (json_last_error() !== JSON_ERROR_NONE) {
+          echo '<p>Fehler beim Parsen der JSON-Daten.</p>';
+          exit;
+      }
+    ?>
+
+      <!-- Banner-Galerie -->
+    <div class="banner_gallery wrapperfull" id="image-preview">
+      <?php
+      $totalImages = count($car['images']);
+      foreach (array_slice($car['images'], 0, 3) as $index => $img):
+        $isLast = $index === 2 && $totalImages > 3;
+      ?>
+        <div class="thumb" data-id="<?= $index ?>">
+          <img src="assets/cars/<?= htmlspecialchars($id) ?>/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($car['name']) ?>">
+          <?php if ($isLast): ?>
+            <div class="more-overlay">+<?= $totalImages - 3 ?> mehr</div>
+          <?php endif; ?>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Lightbox Container (versteckt bis ein Bild geklickt wird) -->
+    <div id="lightbox" class="lightbox hidden">
+      <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Großansicht">
+        <div class="lightbox-nav">
+          <button id="prev-btn">&#10094;</button>
+          <button id="next-btn">&#10095;</button>
+        </div>
       </div>
     </div>
-  </div>
 
 
     <!-- Fahrzeugkopf -->
@@ -117,7 +116,6 @@
       </ul>
     </section>
   </main>
-  
   <?php include_once('./inc/footer.inc.php'); ?>
   <script src="./script/details.js"></script>
   </body>
