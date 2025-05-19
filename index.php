@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="./style/nav_footer.css" />
   <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
   <link rel="stylesheet" href="./style/style.css" />
-  
-  
 </head>
 <body>
   <?php include_once('./inc/nav.inc.php'); ?>
