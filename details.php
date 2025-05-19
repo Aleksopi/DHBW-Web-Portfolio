@@ -76,44 +76,45 @@
     <!-- Detail-Karten -->
     <section class="vehicle-details">
       <ul class="details-list">
-        <?php
-        $info = [
-          'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
-          'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
-          'acceleration' => ['0-100 km/h',   'assets/icons/acceleration.svg'],
-          'top_speed'    => ['Höchstgeschw.', 'assets/icons/speed.svg'],
-          'color'        => ['Farbe',        'assets/icons/color.svg'],
-          'interior'     => ['Innenraum',    'assets/icons/interior.svg'],
-          'transmission' => ['Getriebe',     'assets/icons/transmission.svg'],
-          'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
-          'engine'       => ['Motor',        'assets/icons/engine.svg'],
-        ];
+  <?php if (!empty($car['description'])): ?>
+    <li>
+      <div class="icon">
+        <img src="assets/icons/description.svg" alt="Beschreibung">
+      </div>
+      <div class="content">
+        <strong>Beschreibung</strong>
+        <span><?= htmlspecialchars($car['description']) ?></span>
+      </div>
+    </li>
+  <?php endif; ?>
 
-        foreach ($info as $key => [$label, $icon]):
-          if (!empty($car[$key])): ?>
-            <li>
-              <div class="icon">
-                <img src="<?= $icon ?>" alt="<?= $label ?>">
-              </div>
-              <div class="content">
-                <strong><?= $label ?></strong>
-                <span><?= htmlspecialchars($car[$key]) ?></span>
-              </div>
-            </li>
-        <?php endif; endforeach; ?>
+  <?php
+  $info = [
+    'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
+    'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
+    'acceleration' => ['0-100 km/h',   'assets/icons/acceleration.svg'],
+    'top_speed'    => ['Höchstgeschw.', 'assets/icons/speed.svg'],
+    'color'        => ['Farbe',        'assets/icons/color.svg'],
+    'interior'     => ['Innenraum',    'assets/icons/interior.svg'],
+    'transmission' => ['Getriebe',     'assets/icons/transmission.svg'],
+    'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
+    'engine'       => ['Motor',        'assets/icons/engine.svg'],
+  ];
 
-        <?php if (!empty($car['description'])): ?>
-          <li>
-            <div class="icon">
-              <img src="assets/icons/description.svg" alt="Beschreibung">
-            </div>
-            <div class="content">
-              <strong>Beschreibung</strong>
-              <span><?= htmlspecialchars($car['description']) ?></span>
-            </div>
-          </li>
-        <?php endif; ?>
-      </ul>
+  foreach ($info as $key => [$label, $icon]):
+    if (!empty($car[$key])): ?>
+      <li>
+        <div class="icon">
+          <img src="<?= $icon ?>" alt="<?= $label ?>">
+        </div>
+        <div class="content">
+          <strong><?= $label ?></strong>
+          <span><?= htmlspecialchars($car[$key]) ?></span>
+        </div>
+      </li>
+  <?php endif; endforeach; ?>
+</ul>
+
     </section>
   </main>
   <?php include_once('./inc/footer.inc.php'); ?>
