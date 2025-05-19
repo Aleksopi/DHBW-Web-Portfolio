@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Datenschutz</title>
-    <link rel="stylesheet" href="./style/nav_footer.css" />
-    <link rel="stylesheet" href="./style/datenschutz.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <nav>
-      <?php include_once('./inc/nav.inc.php'); ?>
-    </nav>
-    
-    <main>
-      <section class="container">
-        <div class="datenschutz-header">
-          <img src="./assets/cars/audi-rs6/back.jpg" alt="Hintergrund" class="header-bg" />    
-          <h1>Datenschutzerklärung</h1>
-        </div>
-        <div class="datenschutz-container">
-          <section class="datenschutz-section">
-            <h2>1. Allgemeines</h2>
-            <p>Der Schutz Ihrer persönlichen Daten genießt bei uns höchste Priorität. Wir verarbeiten Ihre Daten ausschließlich im Einklang mit den geltenden gesetzlichen Bestimmungen, insbesondere der Datenschutz-Grundverordnung (DSGVO) und dem Telekommunikationsgesetz (TKG). Mit dieser Datenschutzerklärung möchten wir Sie umfassend über die wichtigsten Aspekte der Datenverarbeitung im Rahmen Ihrer Nutzung unserer Website informieren.</p>
-          </section>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Datenschutz</title>
+  <link rel="stylesheet" href="./style/nav_footer.css" />
+  <link rel="stylesheet" href="./style/datenschutz.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <?php include_once('./inc/nav.inc.php'); ?>
           <section class="datenschutz-section">
             <h2>2. Kontakt mit uns</h2>
             <p>Wenn Sie über das auf der Website bereitgestellte Formular oder per E-Mail Kontakt mit uns aufnehmen, werden die von Ihnen übermittelten Daten zum Zwecke der Bearbeitung Ihrer Anfrage sowie für den Fall von Anschlussfragen bei uns gespeichert. Die Speicherung erfolgt für einen Zeitraum von sechs Monaten. Eine Weitergabe dieser Daten an Dritte erfolgt nicht ohne Ihre ausdrückliche Einwilligung.</p>

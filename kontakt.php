@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kontakt</title>
+    <title>Portfolio - Kontakt</title>
     <link rel="stylesheet" href="./style/fonts.css">
     <link rel="stylesheet" href="./style/nav_footer.css" />
     <link rel="icon" href="./assets/img/logo/logoc.png" type="image/x-icon">
@@ -68,7 +68,6 @@
     </div>
 
     <section class="italia"></section>
-    <script src="./script/kontakt.js"></script>
   </main>
   <?php include './inc/footer.inc.php'; ?>
 </body>

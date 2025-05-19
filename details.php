@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fahrzeugdetails</title>
+    <title>Portfolio - Fahrzeugdetails</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style/nav_footer.css" />
@@ -76,47 +76,103 @@
     <!-- Detail-Karten -->
     <section class="vehicle-details">
       <ul class="details-list">
-        <?php
-        $info = [
-          'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
-          'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
-          'acceleration' => ['0-100 km/h',   'assets/icons/acceleration.svg'],
-          'top_speed'    => ['Höchstgeschw.', 'assets/icons/speed.svg'],
-          'color'        => ['Farbe',        'assets/icons/color.svg'],
-          'interior'     => ['Innenraum',    'assets/icons/interior.svg'],
-          'transmission' => ['Getriebe',     'assets/icons/transmission.svg'],
-          'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
-          'engine'       => ['Motor',        'assets/icons/engine.svg'],
-        ];
+  <?php if (!empty($car['description'])): ?>
+    <li>
+      <div class="icon">
+        <img src="assets/icons/description.svg" alt="Beschreibung">
+      </div>
+      <div class="content">
+        <strong>Beschreibung</strong>
+        <span><?= htmlspecialchars($car['description']) ?></span>
+      </div>
+    </li>
+  <?php endif; ?>
 
-        foreach ($info as $key => [$label, $icon]):
-          if (!empty($car[$key])): ?>
-            <li>
-              <div class="icon">
-                <img src="<?= $icon ?>" alt="<?= $label ?>">
-              </div>
-              <div class="content">
-                <strong><?= $label ?></strong>
-                <span><?= htmlspecialchars($car[$key]) ?></span>
-              </div>
-            </li>
-        <?php endif; endforeach; ?>
+  <?php
+  $info = [
+    'horsepower'   => ['Leistung',     'assets/icons/horsepower.svg'],
+    'torque'       => ['Drehmoment',   'assets/icons/torque.svg'],
+    'acceleration' => ['0-100 km/h',   'assets/icons/acceleration.svg'],
+    'top_speed'    => ['Höchstgeschw.', 'assets/icons/speed.svg'],
+    'color'        => ['Farbe',        'assets/icons/color.svg'],
+    'interior'     => ['Innenraum',    'assets/icons/interior.svg'],
+    'transmission' => ['Getriebe',     'assets/icons/transmission.svg'],
+    'drive'        => ['Antrieb',      'assets/icons/drive.svg'],
+    'engine'       => ['Motor',        'assets/icons/engine.svg'],
+  ];
 
-        <?php if (!empty($car['description'])): ?>
-          <li>
-            <div class="icon">
-              <img src="assets/icons/description.svg" alt="Beschreibung">
-            </div>
-            <div class="content">
-              <strong>Beschreibung</strong>
-              <span><?= htmlspecialchars($car['description']) ?></span>
-            </div>
-          </li>
-        <?php endif; ?>
-      </ul>
+  foreach ($info as $key => [$label, $icon]):
+    if (!empty($car[$key])): ?>
+      <li>
+        <div class="icon">
+          <img src="<?= $icon ?>" alt="<?= $label ?>">
+        </div>
+        <div class="content">
+          <strong><?= $label ?></strong>
+          <span><?= htmlspecialchars($car[$key]) ?></span>
+        </div>
+      </li>
+  <?php endif; endforeach; ?>
+</ul>
+
     </section>
   </main>
   <?php include_once('./inc/footer.inc.php'); ?>
-  <script src="./script/details.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const thumbElements = document.querySelectorAll(".banner_gallery .thumb");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".lightbox-close");
+      const nextBtn = document.getElementById("next-btn");
+      const prevBtn = document.getElementById("prev-btn");
+
+      const images = <?= json_encode(array_values($car['images'])) ?>;
+      const carId = "<?= htmlspecialchars($id) ?>";
+      let currentIndex = 0;
+
+      const showImage = (index) => {
+        currentIndex = index;
+        const imgPath = `assets/cars/${carId}/${images[currentIndex]}`;
+        lightboxImg.src = imgPath;
+        lightbox.classList.remove("hidden");
+      };
+
+      thumbElements.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => showImage(index));
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+        lightboxImg.src = "";
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      // Schließen bei Klick außerhalb
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add("hidden");
+          lightboxImg.src = "";
+        }
+      });
+
+      // ESC zum Schließen
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          lightbox.classList.add("hidden");
+          lightboxImg.src = "";
+        }
+      });
+    });
+  </script>
   </body>
 </html>
