@@ -62,7 +62,7 @@
       <source src="./assets/video/videoplayback (1).webm" type="video/webm">
     </video>
     <video class="portrait-video" autoplay muted loop playsinline>
-      <source src="./assets/cars/Reels/Komp 1_1.mp4" type="video/webm">
+      <source src="./assets/video/videoplayback (2).webm" type="video/webm">
     </video>
     <div class="text-block">
       <h2>Ferrari Vibes</h2>
@@ -80,7 +80,7 @@
         <source src="./assets/cars/Reels/Jesko x Singer_prob4.mp4" type="video/webm">
       </video>
       <video class="portrait-video" autoplay muted loop playsinline>
-        <source src="./assets/video/videoplayback (2).webm" type="video/webm">
+        <source src="./assets/cars/Reels/Komp 1_1.mp4" type="video/webm">
       </video>
     </div>
   </div>
