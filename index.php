@@ -23,7 +23,7 @@
         <div class="home-content">
           <div class="home-text">
             <h1>Willkommen in meinem Portfolio</h1>
-            <h2>Hier finden Sie meine Projekte und Arbeiten</h2>
+            <h2>Hier finden Sie die besten Autos</h2>
           </div>
           <div class="highlight-buttons">
             <a href="details.php?id=ferrari-f40" class="highlight-btn">FERRARI F40</a>
