@@ -17,7 +17,7 @@
   ?>
   <div class="container">
     <section class="about-header">
-      <img src="./assets/cars/buggati-chiron/bugatti-chiron-2.jpg" alt="Über Uns Header" class="header-bg"/>
+      <img src="./assets/cars/Carage/IMG_8344quer.jpg" alt="Über Uns Header" class="header-bg"/>
       <h1>Über Uns</h1>
     </section>
   </div>
