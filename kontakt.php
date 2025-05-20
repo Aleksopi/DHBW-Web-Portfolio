@@ -14,7 +14,7 @@
   <?php include './inc/nav.inc.php'; ?>
   <main>
     <section class="kontakt-header">
-      <img src="./assets/cars/ferrari-DODICI/IMG_4798_1.jpg" alt="Hintergrundbild" class="header-bg">
+      <img src="./assets/cars/Ferrari-DODICI/IMG_4798_1.jpg" alt="Hintergrundbild" class="header-bg">
       <h1>Kontakt</h1>
     </section>
 
