@@ -133,7 +133,7 @@
 
       const showImage = (index) => {
         currentIndex = index;
-        const imgPath = `assets/cars/${carId}/${images[currentIndex]}`;
+        const imgPath = `./assets/cars/${carId}/${images[currentIndex]}`;
         lightboxImg.src = imgPath;
         lightbox.classList.remove("hidden");
       };

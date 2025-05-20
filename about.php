@@ -92,7 +92,7 @@
             <div id="person1" class="team-member-text">
               <button class="close-details-btn" aria-label="Details schließen">&times;</button>
               <h3>Aleks</h3>
-              <p>Er sorgt hinter den Kulissen dafür, dass unsere Homepage, Galerie und das Backend reibungslos funktionieren: schnell, sicher und intuitiv.</p>
+              <p>Er sorgt, dass alles reibungslos funktionieren: schnell, sicher und intuitiv. Zudem Leitet der das Projekt und Organisiert alles.</p>
             </div>
             <div id="person2" class="team-member-text">
               <button class="close-details-btn" aria-label="Details schließen">&times;</button>
