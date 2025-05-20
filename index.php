@@ -112,8 +112,8 @@
 
       <section class="gallery-section">
         <div class="gallery-header">
-          <h2>Meine Galerie</h2>
-          <p>Ein Blick auf ausgewählte Fahrzeuge</p>
+          <h2>Cars</h2>
+          <p>Alle neue Autos auf einen Blick</p>
         </div>
         <div class="gallery-grid" id="gallery-grid"></div>
       </section>

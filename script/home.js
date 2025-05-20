@@ -85,7 +85,7 @@ if (video) {
   });
 
   video.addEventListener('timeupdate', () => {
-    if (video.currentTime > 5) {
+    if (video.currentTime > 133) {
       video.currentTime = 0;
     }
   });
